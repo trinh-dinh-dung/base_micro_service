@@ -1,0 +1,1329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Home" xml:space="preserve">
+    <value>Home123 service</value>
+  </data>
+  <data name="CalendarManagement_is_not_exist" xml:space="preserve">
+    <value>CalendarManagement is not exist</value>
+  </data>
+  <data name="Name_is_required" xml:space="preserve">
+    <value>Name is required</value>
+  </data>
+  <data name="Name_is_exists" xml:space="preserve">
+    <value>Name has been duplicated, can't get this code</value>
+  </data>
+  <data name="Description_is_required" xml:space="preserve">
+    <value>Description is required</value>
+  </data>
+  <data name="Work_Area_is_required" xml:space="preserve">
+    <value>Work Area is required</value>
+  </data>
+  <data name="Work_area_is_setting_calender" xml:space="preserve">
+    <value>Work area is setted calender</value>
+  </data>
+  <data name="Workunit_is_not_exist" xml:space="preserve">
+    <value>Workunit is not exist</value>
+  </data>
+  <data name="Workcenterid_is_required" xml:space="preserve">
+    <value>Workcenterid is required</value>
+  </data>
+  <data name="Managerid_is_required" xml:space="preserve">
+    <value>Managerid is required</value>
+  </data>
+  <data name="Code_is_exists" xml:space="preserve">
+    <value>Code is exists</value>
+  </data>
+  <data name="WorkerId_is_required" xml:space="preserve">
+    <value>WorkerId is required</value>
+  </data>
+  <data name="SkillId_is_required" xml:space="preserve">
+    <value>SkillId is required</value>
+  </data>
+  <data name="Startdatetraining_is_required" xml:space="preserve">
+    <value>Startdatetraining is required</value>
+  </data>
+  <data name="Enddatetraining_is_required" xml:space="preserve">
+    <value>Enddatetraining is required</value>
+  </data>
+  <data name="Startdatetraining_not_bigger_than_Enddatetraining" xml:space="preserve">
+    <value>Startdatetraining not bigger than Enddatetraining</value>
+  </data>
+  <data name="SkillId_is_exists" xml:space="preserve">
+    <value>SkillId is exists</value>
+  </data>
+  <data name="WorkerSkill_is_not__exists" xml:space="preserve">
+    <value>WorkerSkill is not xists</value>
+  </data>
+  <data name="Process_name_is_required" xml:space="preserve">
+    <value>Process name is required</value>
+  </data>
+  <data name="Type_of_approval_is_required" xml:space="preserve">
+    <value>Type of approval is required</value>
+  </data>
+  <data name="Please_select_approval_levels" xml:space="preserve">
+    <value>Please select approval levels</value>
+  </data>
+  <data name="Process_name_is_exists" xml:space="preserve">
+    <value>Process name is exists</value>
+  </data>
+  <data name="Levels_are_duplicated" xml:space="preserve">
+    <value>Levels are duplicated</value>
+  </data>
+  <data name="First_step_level_should_be_one" xml:space="preserve">
+    <value>First step level should be one</value>
+  </data>
+  <data name="Level_names_cannot_be_duplicated" xml:space="preserve">
+    <value>Level names cannot be duplicated</value>
+  </data>
+  <data name="Approval_name_cannot_be_duplicated" xml:space="preserve">
+    <value>Level names cannot be duplicated</value>
+  </data>
+  <data name="Level_is_required" xml:space="preserve">
+    <value>Level is required</value>
+  </data>
+  <data name="Level_name_is_required" xml:space="preserve">
+    <value>Level name is required</value>
+  </data>
+  <data name="Approval_is_required" xml:space="preserve">
+    <value>Approval is required</value>
+  </data>
+  <data name="Process_is_not_exist" xml:space="preserve">
+    <value>Process is not exist</value>
+  </data>
+  <data name="Typeapproval_is_required" xml:space="preserve">
+    <value>Typeapproval is required</value>
+  </data>
+  <data name="Typeapproval_is_not_correct" xml:space="preserve">
+    <value>Typeapproval is not correct</value>
+  </data>
+  <data name="Iddoc_is_required" xml:space="preserve">
+    <value>Iddoc is required</value>
+  </data>
+  <data name="ListApprovalStepRequest_is_required" xml:space="preserve">
+    <value>ListApprovalStepRequest is required</value>
+  </data>
+  <data name="Level_must_be_greater_than_0" xml:space="preserve">
+    <value>Level must be greater than 0</value>
+  </data>
+  <data name="Cannot_add_ticket_creator_in_approval_step" xml:space="preserve">
+    <value>Can't add ticket creator in approval step</value>
+  </data>
+  <data name="SOP_is_not_exist" xml:space="preserve">
+    <value>SOP is not exist</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Approval_is_not_exist" xml:space="preserve">
+    <value>Approval is not exist</value>
+  </data>
+  <data name="SOP_document_not_found" xml:space="preserve">
+    <value>SOP document not found</value>
+  </data>
+  <data name="Approvalid_is_required" xml:space="preserve">
+    <value>Approvalid is required</value>
+  </data>
+  <data name="TypeApproval_is_incorrect" xml:space="preserve">
+    <value>TypeApproval is incorrect</value>
+  </data>
+  <data name="Comment_is_required" xml:space="preserve">
+    <value>Comment is required</value>
+  </data>
+  <data name="Approval_slip_is_not_exist" xml:space="preserve">
+    <value>Approval slip is not exist</value>
+  </data>
+  <data name="Slip_approved_or_rejected" xml:space="preserve">
+    <value>Slip approved or rejected</value>
+  </data>
+  <data name="You_have_not_been_approved_yet" xml:space="preserve">
+    <value>You have not been approved yet</value>
+  </data>
+  <data name="Surname_is_required" xml:space="preserve">
+    <value>Surname is required</value>
+  </data>
+  <data name="Code_is_required" xml:space="preserve">
+    <value>Code is required</value>
+  </data>
+  <data name="Dateofbirth_is_required" xml:space="preserve">
+    <value>Dateofbirth is required</value>
+  </data>
+  <data name="Gender_is_required" xml:space="preserve">
+    <value>Gender is required</value>
+  </data>
+  <data name="Phone_is_required" xml:space="preserve">
+    <value>Phone is required</value>
+  </data>
+  <data name="Email_is_required" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+  <data name="Addressprovincescode_is_required" xml:space="preserve">
+    <value>Addressprovincescode is required</value>
+  </data>
+  <data name="Addressdistrictscode_is_required" xml:space="preserve">
+    <value>Addressdistrictscode is required</value>
+  </data>
+  <data name="Hometownprovincescode_is_required" xml:space="preserve">
+    <value>Hometownprovincescode is required</value>
+  </data>
+  <data name="Hometowndistrictscode_is_required" xml:space="preserve">
+    <value>Hometowndistrictscode is required</value>
+  </data>
+  <data name="Usercontactname_is_required" xml:space="preserve">
+    <value>Usercontactname is required</value>
+  </data>
+  <data name="Usercontactrelationship_is_required" xml:space="preserve">
+    <value>Usercontactrelationship is required</value>
+  </data>
+  <data name="Usercontactaddress_is_required" xml:space="preserve">
+    <value>Usercontactaddress is required</value>
+  </data>
+  <data name="Usercontactphone_is_required" xml:space="preserve">
+    <value>Usercontactphone is required</value>
+  </data>
+  <data name="workareaId_is_required" xml:space="preserve">
+    <value>workareaId is required</value>
+  </data>
+  <data name="Phone_is_exist" xml:space="preserve">
+    <value>Phone is exist</value>
+  </data>
+  <data name="Email_is_exist" xml:space="preserve">
+    <value>Email is exist</value>
+  </data>
+  <data name="Worker_is_not__exists" xml:space="preserve">
+    <value>Worker is not xists</value>
+  </data>
+  <data name="Sign_is_required" xml:space="preserve">
+    <value>	Sign is required</value>
+  </data>
+  <data name="GroupworkdayId_is_required" xml:space="preserve">
+    <value>	GroupworkdayId is required</value>
+  </data>
+  <data name="GroupworkdayId_is_not_exists" xml:space="preserve">
+    <value>	GroupworkdayId is not exist</value>
+  </data>
+  <data name="StartTime_is_required" xml:space="preserve">
+    <value>StartTime is required</value>
+  </data>
+  <data name="EndTime_is_required" xml:space="preserve">
+    <value>EndTime is required</value>
+  </data>
+  <data name="StartTime_not_bigger_than_EndTime" xml:space="preserve">
+    <value>StartTime not bigger than EndTime</value>
+  </data>
+  <data name="Issocialinsurance_is_required" xml:space="preserve">
+    <value>Issocialinsurance is required</value>
+  </data>
+  <data name="ListShiftmanagementId_is_wrong" xml:space="preserve">
+    <value>ListShiftmanagementId is wrong</value>
+  </data>
+  <data name="Sign_is_exist" xml:space="preserve">
+    <value>Sign is exist</value>
+  </data>
+  <data name="WorkDayType_is_not_exist" xml:space="preserve">
+    <value>WorkDayType is not exist</value>
+  </data>
+  <data name="WorkDayType_already_used_in_calendarsetting_is_not_deleted" xml:space="preserve">
+    <value>WorkDayType already used in calendarsetting is not deleted</value>
+  </data>
+  <data name="Year_is_required" xml:space="preserve">
+    <value>Year is required</value>
+  </data>
+  <data name="Month_is_required" xml:space="preserve">
+    <value>Month is required</value>
+  </data>
+  <data name="Data_is_not_exist" xml:space="preserve">
+    <value>Data is not exist</value>
+  </data>
+  <data name="Workdaytypeid_is_required" xml:space="preserve">
+    <value>Workdaytypeid is required</value>
+  </data>
+  <data name="Year_is_not_correct" xml:space="preserve">
+    <value>Year is not correct</value>
+  </data>
+  <data name="Month_is_not_correct" xml:space="preserve">
+    <value>Month is not correct</value>
+  </data>
+  <data name="Day_is_not_correct" xml:space="preserve">
+    <value>Day is not correct</value>
+  </data>
+  <data name="is_exist" xml:space="preserve">
+    <value>is exist</value>
+  </data>
+  <data name="Calendarsetting_is_not_exist" xml:space="preserve">
+    <value>Calendarsetting is not exist</value>
+  </data>
+  <data name="ConfigGen_is_not_exist" xml:space="preserve">
+    <value>ConfigGen is not exist</value>
+  </data>
+  <data name="Color_is_required" xml:space="preserve">
+    <value>Color is required</value>
+  </data>
+  <data name="GroupWorkday_is_not_exist" xml:space="preserve">
+    <value>GroupWorkday is not exist</value>
+  </data>
+  <data name="GroupWorkDay_already_used_in_WorkDayType_is_not_deleted" xml:space="preserve">
+    <value>GroupWorkDay already used in WorkDayType is not deleted</value>
+  </data>
+  <data name="WorkCenter_is_not_exist" xml:space="preserve">
+    <value>WorkCenter is not exist</value>
+  </data>
+  <data name="WorkCenter_already_used_in_workunit_is_not_deleted" xml:space="preserve">
+    <value>WorkCenter already used in workunit is not deleted </value>
+  </data>
+  <data name="TypeId_is_required" xml:space="preserve">
+    <value>TypeId is required</value>
+  </data>
+  <data name="WorkAreaParent_is_not_exist" xml:space="preserve">
+    <value>WorkAreaParent is not exist</value>
+  </data>
+  <data name="WorkArea_is_not_exist" xml:space="preserve">
+    <value>WorkArea is not exist</value>
+  </data>
+  <data name="Please_delete_the_smaller_work_area_first" xml:space="preserve">
+    <value>Please delete the smaller work area first</value>
+  </data>
+  <data name="Workarea_is_not_deleted" xml:space="preserve">
+    <value>Work area already has linked data, cannot be deleted</value>
+  </data>
+  <data name="Skill_is_not_exist" xml:space="preserve">
+    <value>Skill is not exist</value>
+  </data>
+  <data name="Skill_already_used_in_worker_is_not_deleted" xml:space="preserve">
+    <value>Skill already used in worker is not deleted</value>
+  </data>
+  <data name="Productionrequirement_is_exists" xml:space="preserve">
+    <value>Productionrequirement is exists</value>
+  </data>
+  <data name="Productionrequirement_is_not_exist" xml:space="preserve">
+    <value>Productionrequirement is not exist</value>
+  </data>
+  <data name="Productionrequirementcode_cannot_be_empty_or_null" xml:space="preserve">
+    <value>Productionrequirementcode cannot be empty or null</value>
+  </data>
+  <data name="Productcode_cannot_be_empty_or_null" xml:space="preserve">
+    <value>Productcode cannot be empty or null</value>
+  </data>
+  <data name="Sign_is_exists" xml:space="preserve">
+    <value>Sign is exists</value>
+  </data>
+  <data name="StartTime_of_recreation_is_required" xml:space="preserve">
+    <value>StartTime of recreation is required</value>
+  </data>
+  <data name="EndTime_of_recreation_is_required" xml:space="preserve">
+    <value>EndTime of recreation is required</value>
+  </data>
+  <data name="StartTime_of_recreation_not_bigger_than_EndTime" xml:space="preserve">
+    <value>StartTime of recreation not bigger than EndTime</value>
+  </data>
+  <data name="ShiftManagement_is_not_exist" xml:space="preserve">
+    <value>ShiftManagement is not exist</value>
+  </data>
+  <data name="ShiftManagement_is_used_to_generate_WorkDayType" xml:space="preserve">
+    <value>ShiftManagement is used to generate WorkDayType</value>
+  </data>
+  <data name="CalendarManagementId_is_required" xml:space="preserve">
+    <value>CalendarManagementId is required</value>
+  </data>
+  <data name="SOP_name_cannot_be_duplicated" xml:space="preserve">
+    <value>SOP's name cannot be duplicated</value>
+  </data>
+  <data name="SOP_version_name_cannot_be_duplicated" xml:space="preserve">
+    <value>SOP version's name cannot be duplicated</value>
+  </data>
+  <data name="Version_SOP_is_not_exist" xml:space="preserve">
+    <value>SOP Version is not exist</value>
+  </data>
+  <data name="Version_already_has_a_different_action_cannot_be_fixed" xml:space="preserve">
+    <value>Version already has a different action, cannot be fixed</value>
+  </data>
+  <data name="Version_already_has_a_different_action_cannot_be_deleted" xml:space="preserve">
+    <value>Version already has a different action, cannot be deleted</value>
+  </data>
+  <data name="There_is_no_new_version_for_browsing" xml:space="preserve">
+    <value>There is no new version for browsing</value>
+  </data>
+  <data name="Bom_is_not_exist" xml:space="preserve">
+    <value>Bom is not exist</value>
+  </data>
+  <data name="Sopversion_is_not_exist" xml:space="preserve">
+    <value>Sopversion is not exist</value>
+  </data>
+  <data name="Bomversion_is_not_exist" xml:space="preserve">
+    <value>Bomversion is not exist</value>
+  </data>
+  <data name="Processversion_is_not_exist" xml:space="preserve">
+    <value>Processversion is not exist</value>
+  </data>
+  <data name="must_be_greater_than_or_equal_to_0" xml:space="preserve">
+    <value>must be greater than or equal to 0</value>
+  </data>
+  <data name="cannot_be_empty_or_null" xml:space="preserve">
+    <value>cannot be empty or null</value>
+  </data>
+  <data name="must_be_greater_than_0" xml:space="preserve">
+    <value>must be greater than or equal to 0</value>
+  </data>
+  <data name="Timedeparture_cannot_be_less_than_current_date" xml:space="preserve">
+    <value>Timedeparture cannot be less than current date</value>
+  </data>
+  <data name="Unable_to_delete_version" xml:space="preserve">
+    <value>Cannot delete only version</value>
+  </data>
+  <data name="Version_Process_is_not_exist" xml:space="preserve">
+    <value>Version Process is not exist</value>
+  </data>
+  <data name="This_is_the_version_in_use_cannot_be_deleted" xml:space="preserve">
+    <value>This is the version in use, cannot be deleted</value>
+  </data>
+  <data name="Modelcode_is_wrong" xml:space="preserve">
+    <value>Modelcode is wrong</value>
+  </data>
+  <data name="Modelcode_is_required" xml:space="preserve">
+    <value>Modelcode is required</value>
+  </data>
+  <data name="Modelname_is_required" xml:space="preserve">
+    <value>Modelname is required</value>
+  </data>
+  <data name="Model_is_exists" xml:space="preserve">
+    <value>Model is exists</value>
+  </data>
+  <data name="Model_is_not_exists" xml:space="preserve">
+    <value>Model is not exist</value>
+  </data>
+  <data name="Please_remove_the_product_before_deleting_this_model" xml:space="preserve">
+    <value>Model is associated with the product, cannot be deleted</value>
+  </data>
+  <data name="ProductCode_is_wrong" xml:space="preserve">
+    <value>ProductCode is wrong</value>
+  </data>
+  <data name="ProductName_is_required" xml:space="preserve">
+    <value>ProductName is required</value>
+  </data>
+  <data name="ProductCode_is_required" xml:space="preserve">
+    <value>ProductCode is required</value>
+  </data>
+  <data name="ProductCode_is_exists" xml:space="preserve">
+    <value>ProductCode is exists</value>
+  </data>
+  <data name="ProductName_is_exists" xml:space="preserve">
+    <value>ProductName is exists</value>
+  </data>
+  <data name="Product_is_not_exists" xml:space="preserve">
+    <value>Product is not exist</value>
+  </data>
+  <data name="Unable_to_create_new_SOP_version" xml:space="preserve">
+    <value>Unable to create new SOP version</value>
+  </data>
+  <data name="SOP_name_cannot_be_empty_or_null" xml:space="preserve">
+    <value>SOP name cannot be empty or null</value>
+  </data>
+  <data name="SOP_Version_name_cannot_be_empty_or_null" xml:space="preserve">
+    <value>SOP version name cannot be empty or null</value>
+  </data>
+  <data name="Schedule_has_been_set_cannot_be_deleted" xml:space="preserve">
+    <value>Calendar has been set, cannot be deleted</value>
+  </data>
+  <data name="Link_process_with_workcenter" xml:space="preserve">
+    <value>Conection not exist</value>
+  </data>
+  <data name="Code_workArea" xml:space="preserve">
+    <value>UPPER code is up to 9 characters long, includes only numbers and letters, no spaces</value>
+  </data>
+  <data name="Do_not_duplicate_the_code" xml:space="preserve">
+    <value>Work center code, work area code, work unit code cannot be the same</value>
+  </data>
+  <data name="Duplicate_the_code" xml:space="preserve">
+    <value>Code has been duplicated, can't get this code</value>
+  </data>
+  <data name="A_workarea_associated_with_the_process_already_exists" xml:space="preserve">
+    <value>A workarea associated with the process already exists</value>
+  </data>
+  <data name="Link_does_not_exist" xml:space="preserve">
+    <value>Link does not exist</value>
+  </data>
+  <data name="Work_center_cannot_be_empty" xml:space="preserve">
+    <value>Work center cannot be empty</value>
+  </data>
+  <data name="Product_cannot_be_empty" xml:space="preserve">
+    <value>Product cannot be empty</value>
+  </data>
+  <data name="Process_cannot_be_empty" xml:space="preserve">
+    <value>Process cannot be empty</value>
+  </data>
+  <data name="Yield_must_be_greater_than_0" xml:space="preserve">
+    <value>Yield must be greater than 0</value>
+  </data>
+  <data name="Setting_time_must_be_greater_than_0" xml:space="preserve">
+    <value>Setting time must be greater than 0</value>
+  </data>
+  <data name="Already_exist_a_work_cente_with_the_process" xml:space="preserve">
+    <value>Already exist a work center associated with the process, cannot be deleted</value>
+  </data>
+  <data name="The_work_unit_has_linked_data_it_cannot_be_deleted" xml:space="preserve">
+    <value>The production unit has linked data, it cannot be deleted</value>
+  </data>
+  <data name="Name_cannot_exceed_100_characters" xml:space="preserve">
+    <value>Name cannot exceed 100 characters</value>
+  </data>
+  <data name="Note_cannot_exceed_200_characters" xml:space="preserve">
+    <value>Note cannot exceed 200 characters</value>
+  </data>
+  <data name="BOM_Version_has_been_not_aprovel" xml:space="preserve">
+    <value>New version not approved</value>
+  </data>
+  <data name="Bom_is_null" xml:space="preserve">
+    <value>BOM is null</value>
+  </data>
+  <data name="Cant_find_BOM_in_system" xml:space="preserve">
+    <value>Can't find BOM in system</value>
+  </data>
+  <data name="Cant_find_version" xml:space="preserve">
+    <value>Can't find version</value>
+  </data>
+  <data name="Product_already_exists_BOM" xml:space="preserve">
+    <value>Product already exists BOM</value>
+  </data>
+  <data name="BOMcode_already_exists_in_system" xml:space="preserve">
+    <value>BOM code already exists in system</value>
+  </data>
+  <data name="BOMcode_does_not_exists" xml:space="preserve">
+    <value>BOM code does not exists</value>
+  </data>
+  <data name="BOMcode_is_required" xml:space="preserve">
+    <value>Bom code is required</value>
+  </data>
+  <data name="BOMversion_does_not_exists" xml:space="preserve">
+    <value>BOM version does not exists</value>
+  </data>
+  <data name="BOMversion_is_using_cant_remove" xml:space="preserve">
+    <value>BOM version is using, can't remove</value>
+  </data>
+  <data name="Cant_remove_lastest_version" xml:space="preserve">
+    <value>Cant remove lastest version</value>
+  </data>
+  <data name="The_latest_version_is_available_cannot_create_a_new_one" xml:space="preserve">
+    <value>The latest version is available, cannot create a new one</value>
+  </data>
+  <data name="ListStepversionprocessRequest_is_required" xml:space="preserve">
+    <value>ListStepversionprocessRequest is required</value>
+  </data>
+  <data name="Step_Name_is_required" xml:space="preserve">
+    <value>Step Name is required</value>
+  </data>
+  <data name="Stepnames_cannot_be_duplicated" xml:space="preserve">
+    <value>Stepnames cannot be duplicated</value>
+  </data>
+  <data name="Operationtime_is_required" xml:space="preserve">
+    <value>Operationtime is required</value>
+  </data>
+  <data name="Steplevel_is_required" xml:space="preserve">
+    <value>Steplevel is required</value>
+  </data>
+  <data name="Steplevels_cannot_be_duplicated" xml:space="preserve">
+    <value>Steplevels cannot be duplicated</value>
+  </data>
+  <data name="Soplevel_is_required" xml:space="preserve">
+    <value>Soplevel is required</value>
+  </data>
+  <data name="Soplevel_cannot_be_duplicated" xml:space="preserve">
+    <value>Soplevel cannot be duplicated</value>
+  </data>
+  <data name="Sopid_cannot_be_duplicated" xml:space="preserve">
+    <value>Sopid cannot be duplicated</value>
+  </data>
+  <data name="Machineid_cannot_be_duplicated" xml:space="preserve">
+    <value>Machineid cannot be duplicated</value>
+  </data>
+  <data name="Number_of_machines_is_required_and_is_greater_than0" xml:space="preserve">
+    <value>Number of machines is required and is greater than 0</value>
+  </data>
+  <data name="Skill_cannot_be_duplicated" xml:space="preserve">
+    <value>Skill cannot be duplicated</value>
+  </data>
+  <data name="Number_of_skill_is_required_and_is_greater_than0" xml:space="preserve">
+    <value>Number of labor is required and is greater than 0</value>
+  </data>
+  <data name="Accessories_cannot_be_duplicated" xml:space="preserve">
+    <value>Accessories cannot be duplicated</value>
+  </data>
+  <data name="Number_of_accessories_is_required_and_is_greater_than0" xml:space="preserve">
+    <value>Number of accessories is required and is greater than 0</value>
+  </data>
+  <data name="Condition_group_name_is_required" xml:space="preserve">
+    <value>Condition group name is required</value>
+  </data>
+  <data name="Number_is_required" xml:space="preserve">
+    <value>Number is required</value>
+  </data>
+  <data name="Number_cannot_be_duplicated" xml:space="preserve">
+    <value>Number cannot be duplicated</value>
+  </data>
+  <data name="Condition_group_type_malformed" xml:space="preserve">
+    <value>Condition group type malformed</value>
+  </data>
+  <data name="Only_2_conditions_in_a_group_of_conditions" xml:space="preserve">
+    <value>Only 2 conditions in a group of conditions</value>
+  </data>
+  <data name="A_group_of_conditions_must_choose_a_step" xml:space="preserve">
+    <value>A group of conditions must choose a step</value>
+  </data>
+  <data name="Please_enter_value_when_selecting_step" xml:space="preserve">
+    <value>Please enter value when selecting step</value>
+  </data>
+  <data name="This_product_already_has_a_process" xml:space="preserve">
+    <value>This product already has a process</value>
+  </data>
+  <data name="This_product_does_not_have_a_process_Please_add_procedure_before_creating_new_version" xml:space="preserve">
+    <value>This product does not have a process. Please add procedure before creating new version</value>
+  </data>
+  <data name="Versionid_is_required" xml:space="preserve">
+    <value>Versionid is required</value>
+  </data>
+  <data name="Invalid_identifier" xml:space="preserve">
+    <value>Invalid identifier</value>
+  </data>
+  <data name="Package_is_not_exist" xml:space="preserve">
+    <value>Identifier is not exist</value>
+  </data>
+  <data name="Print_stamp_failed" xml:space="preserve">
+    <value>Print stamp failed</value>
+  </data>
+  <data name="Packing_level_name_cannot_be_empty" xml:space="preserve">
+    <value>Packing level name cannot be empty</value>
+  </data>
+  <data name="Packing_level_name_already_exists" xml:space="preserve">
+    <value>Packing level name already exists</value>
+  </data>
+  <data name="Packing_level_is_not_exist" xml:space="preserve">
+    <value>Packing level name already exists</value>
+  </data>
+  <data name="The_packaging_of_the_product_already_exists" xml:space="preserve">
+    <value>An active packaging specifications of product already exists, can't create new</value>
+  </data>
+  <data name="Packing_level_cannot_be_empty" xml:space="preserve">
+    <value>Packing level cannot be empty</value>
+  </data>
+  <data name="The_number_must_be_greater_than_0" xml:space="preserve">
+    <value>The number must be greater than 0</value>
+  </data>
+  <data name="The_products_packaging_does_not_exist" xml:space="preserve">
+    <value>The product's packaging does not exist</value>
+  </data>
+  <data name="Packing_level_name_exceeds_50_characters" xml:space="preserve">
+    <value>Packing level name exceeds 50 characters</value>
+  </data>
+  <data name="Description_exceeds_255_characters" xml:space="preserve">
+    <value>Description exceeds 255 characters</value>
+  </data>
+  <data name="Cant_repack_without_canceling_the_old_team" xml:space="preserve">
+    <value>It is not possible to repack without destroying the old identifier</value>
+  </data>
+  <data name="The_packing_level_related_to_the_packing_level_already_exists_the_level_cannot_be_changed" xml:space="preserve">
+    <value>The packing level related to the packing level already exists, the level cannot be changed</value>
+  </data>
+  <data name="Identifier_is_not_exist" xml:space="preserve">
+    <value>Identifier does not exist</value>
+  </data>
+  <data name="Previously_canceled_identifier" xml:space="preserve">
+    <value>Previously canceled identifier</value>
+  </data>
+  <data name="Identifiers_that_have_been_destroyed_cannot_be_reprinted" xml:space="preserve">
+    <value>Identifiers that have been destroyed cannot be reprinted</value>
+  </data>
+  <data name="Packing_specification_is_in_operation_cannot_be_edited" xml:space="preserve">
+    <value>Packing specification is in operation, cannot be edited</value>
+  </data>
+  <data name="It_is_not_possible_to_delete_this_packaging" xml:space="preserve">
+    <value>It is not possible to delete this packaging specifications</value>
+  </data>
+  <data name="Cant_delete_this_packing_level" xml:space="preserve">
+    <value>Can't delete this packing level, because the packing specification already exists</value>
+  </data>
+  <data name="The_product_does_not_have_a_working_packaging" xml:space="preserve">
+    <value>The product does not have a working packaging specifications</value>
+  </data>
+  <data name="There_are_no_finished_products_to_identify" xml:space="preserve">
+    <value>There are no finished products to identify</value>
+  </data>
+  <data name="The_total_number_of_stamped_identifiers_must_not_exceed_the_number_of_finished_products_contained_in_the_WO" xml:space="preserve">
+    <value>The total number of stamping identifiers cannot exceed the number of printable identifiers remaining on the work order</value>
+  </data>
+  <data name="Number_of_stamps_must_be_greater_than_1" xml:space="preserve">
+    <value>Number of stamps must be greater than 1</value>
+  </data>
+  <data name="The_number_of_products_in_a_shipment_must_be_greater_than_0" xml:space="preserve">
+    <value>The number of products in a shipment must be greater than 0</value>
+  </data>
+  <data name="Workorder_does_not_exist" xml:space="preserve">
+    <value>Work order does not exist</value>
+  </data>
+  <data name="Explain_why_reprinting_is_required" xml:space="preserve">
+    <value>Explain why reprinting is required</value>
+  </data>
+  <data name="The_number_must_be_greater_than_1" xml:space="preserve">
+    <value>The number must be greater than 1</value>
+  </data>
+  <data name="The_number_of_products_in_a_shipment_must_be_more_than_1" xml:space="preserve">
+    <value>The number of products in a shipment must be more than 1</value>
+  </data>
+  <data name="Checklist_code_cannot_be_empty" xml:space="preserve">
+    <value>Mã danh sách kiểm tra không được để trống</value>
+  </data>
+  <data name="Checklist_name_cannot_be_empty" xml:space="preserve">
+    <value>Checklist name cannot be empty</value>
+  </data>
+  <data name="Stage_cannot_be_left_blank" xml:space="preserve">
+    <value>Stage cannot be left blank</value>
+  </data>
+  <data name="Checkpoint_list_cannot_be_empty" xml:space="preserve">
+    <value>Checkpoint list cannot be empty</value>
+  </data>
+  <data name="Checkpoint_list_with_duplicate_element" xml:space="preserve">
+    <value>Checkpoint list with duplicate element</value>
+  </data>
+  <data name="Checklist_code_already_exists" xml:space="preserve">
+    <value>Checklist code already exists</value>
+  </data>
+  <data name="Checklist_process_approve_for_already_exists" xml:space="preserve">
+    <value>CheckList has process and approve step being active before</value>
+  </data>
+  <data name="Checklist_code_is_not_exist" xml:space="preserve">
+    <value>Checklist code does not exist</value>
+  </data>
+  <data name="Workordercode_cannot_be_empty" xml:space="preserve">
+    <value>Workordercode cannot be empty</value>
+  </data>
+  <data name="Status_cannot_be_empty" xml:space="preserve">
+    <value>Status cannot be empty</value>
+  </data>
+  <data name="WO_is_not_exist_or_has_been_deleted" xml:space="preserve">
+    <value>WO does not exist or has been deleted!</value>
+  </data>
+  <data name="Completed_and_closed_states_are_not_actionable" xml:space="preserve">
+    <value>Completed and closed states are not actionable!</value>
+  </data>
+  <data name="coordination_required_real_quanity" xml:space="preserve">
+    <value>Complete work order required real quanity!</value>
+  </data>
+  <data name="Action_same_status" xml:space="preserve">
+    <value>Action same status!</value>
+  </data>
+  <data name="Unable_to_perform_action" xml:space="preserve">
+    <value>Unable to perform action</value>
+  </data>
+  <data name="Incorrect_status" xml:space="preserve">
+    <value>Incorrect status</value>
+  </data>
+  <data name="No_production_center_with_corresponding_product_found" xml:space="preserve">
+    <value>No production center with corresponding product found!</value>
+  </data>
+  <data name="Workorder_cannot_be_updated" xml:space="preserve">
+    <value>Workorder cannot be updated!</value>
+  </data>
+  <data name="The_product_does_not_exist_Bom" xml:space="preserve">
+    <value>The product does not exist BOM</value>
+  </data>
+  <data name="BOM_has_no_version_in_use" xml:space="preserve">
+    <value>BOM has no version in use</value>
+  </data>
+  <data name="The_product_does_not_yet_have_a_process" xml:space="preserve">
+    <value>The product does not yet have a process</value>
+  </data>
+  <data name="Process_has_no_version_in_use" xml:space="preserve">
+    <value>Process has no version in use</value>
+  </data>
+  <data name="There_is_no_link_between_the_production_center_and_the_process" xml:space="preserve">
+    <value>There is no link between the production center and the process</value>
+  </data>
+  <data name="Checkpoint_code_already_exists" xml:space="preserve">
+    <value>Checkpoint code already exists</value>
+  </data>
+  <data name="Checkpoint_code_does_not_exist" xml:space="preserve">
+    <value>Checkpoint code does not exist</value>
+  </data>
+  <data name="Checkpoint_code_cannot_be_left_blank" xml:space="preserve">
+    <value>Checkpoint code cannot be left blank</value>
+  </data>
+  <data name="Checkpoint_name_cannot_be_left_blank" xml:space="preserve">
+    <value>Checkpoint name cannot be left blank</value>
+  </data>
+  <data name="Both_types_of_test_conditions_cannot_exist" xml:space="preserve">
+    <value>Both types of test conditions cannot exist</value>
+  </data>
+  <data name="There_must_be_at_least_one_type_of_test_condition" xml:space="preserve">
+    <value>There must be at least one type of test condition</value>
+  </data>
+  <data name="Value_cannot_be_left_blank" xml:space="preserve">
+    <value>Value cannot be left blank</value>
+  </data>
+  <data name="The_lower_bound_cannot_be_left_blank" xml:space="preserve">
+    <value>The lower bound cannot be left blank</value>
+  </data>
+  <data name="The_upper_bound_cannot_be_left_blank" xml:space="preserve">
+    <value>The upper bound cannot be left blank</value>
+  </data>
+  <data name="The_upper_bound_should_not_be_less_than_the_lower_bound" xml:space="preserve">
+    <value>The upper bound must not be less than or equal to the lower bound</value>
+  </data>
+  <data name="Checkpoint_is_linked_to_a_checklist_cannot_be_deleted" xml:space="preserve">
+    <value>Checkpoint is linked to a checklist, cannot be deleted</value>
+  </data>
+  <data name="Lot_number_cannot_be_left_blank" xml:space="preserve">
+    <value>Lot number cannot be left blank</value>
+  </data>
+  <data name="Work_order_cannot_be_left_blank" xml:space="preserve">
+    <value>Work order cannot be left blank</value>
+  </data>
+  <data name="The_item_list_in_the_lot_cannot_be_empty" xml:space="preserve">
+    <value>The item list in the lot cannot be empty</value>
+  </data>
+  <data name="List_of_items_with_duplicate_elements" xml:space="preserve">
+    <value>List of items with duplicate elements</value>
+  </data>
+  <data name="Lot_does_not_exist" xml:space="preserve">
+    <value>Lot does not exist</value>
+  </data>
+  <data name="Itemcode_does_not_exist_in_lot" xml:space="preserve">
+    <value>Itemcode does not exist in lot </value>
+  </data>
+  <data name="Error_code_does_not_exist" xml:space="preserve">
+    <value>Error code does not exist</value>
+  </data>
+  <data name="Search_time_cannot_be_empty" xml:space="preserve">
+    <value>Search time cannot be empty</value>
+  </data>
+  <data name="The_time_from_cannot_be_greater_than_the_time_of_arrival" xml:space="preserve">
+    <value>The time from cannot be greater than the time of arrival</value>
+  </data>
+  <data name="Search_time_cannot_be_more_than_1_year" xml:space="preserve">
+    <value>Search time cannot be more than 1 year</value>
+  </data>
+  <data name="Must_enter_a_list_of_work_orders" xml:space="preserve">
+    <value>Must enter a list of work orders</value>
+  </data>
+  <data name="Must_enter_work_center_list" xml:space="preserve">
+    <value>Must enter work center list</value>
+  </data>
+  <data name="Request_does_not_exist" xml:space="preserve">
+    <value>Request does not exist!</value>
+  </data>
+  <data name="Data_cannot_be_null" xml:space="preserve">
+    <value>Data cannot be null</value>
+  </data>
+  <data name="checkpoint_can_delete" xml:space="preserve">
+    <value>Checkpoint can not be delete because it has been on an checklist work </value>
+  </data>
+  <data name="product_can_not_delete" xml:space="preserve">
+    <value>Product can not deleted</value>
+  </data>
+  <data name="work_unit_is_not_exist" xml:space="preserve">
+    <value>Work unit is not exist</value>
+  </data>
+  <data name="code_is_not_null" xml:space="preserve">
+    <value>Employee or machine code cannot be null</value>
+  </data>
+  <data name="the_product_process_does_not_exist" xml:space="preserve">
+    <value>The product does not have a process</value>
+  </data>
+  <data name="work_order_does_not_exist_productcode" xml:space="preserve">
+    <value>Work order does not exist productcode</value>
+  </data>
+  <data name="work_order_is_not_null" xml:space="preserve">
+    <value>WorkOrder cannot be null</value>
+  </data>
+  <data name="work_center_is_not_null" xml:space="preserve">
+    <value>WorkCenter cannot be null</value>
+  </data>
+  <data name="Item_does_not_exist_in_LOT" xml:space="preserve">
+    <value>Item does not exist in LOT</value>
+  </data>
+  <data name="There_is_no_link_the_work_center_to_the_work_order_production_process" xml:space="preserve">
+    <value>There is no link the work center to the work order production process</value>
+  </data>
+  <data name="Process_name_cannot_be_more_than_255_characters" xml:space="preserve">
+    <value>Process name cannot be more than 150 characters</value>
+  </data>
+  <data name="Level_name_cant_not_more_than_255_characters" xml:space="preserve">
+    <value>Level name can't be more than 255 characters</value>
+  </data>
+  <data name="Level_err" xml:space="preserve">
+    <value>Level </value>
+  </data>
+  <data name="QC_lot_code_already_exists" xml:space="preserve">
+    <value>QC lot code already exists</value>
+  </data>
+  <data name="Identifier_does_not_exist" xml:space="preserve">
+    <value>Identifier does not exist</value>
+  </data>
+  <data name="Product_not_produced_by_work_order" xml:space="preserve">
+    <value>Product not produced by work order</value>
+  </data>
+  <data name="already_exists_in_another_lot" xml:space="preserve">
+    <value>already exists in another lot</value>
+  </data>
+  <data name="QC_lot_does_not_exist" xml:space="preserve">
+    <value>QC lot does not exist</value>
+  </data>
+  <data name="This_link_cannot_be_removed_because_a_work_order_is_running" xml:space="preserve">
+    <value>This link cannot be removed because a work order is running</value>
+  </data>
+  <data name="The_number_of_plots_to_be_taken_cannot_be_greater_than_the_amount_in_the_lot" xml:space="preserve">
+    <value>The number of plots to be taken cannot be greater than the amount in the lot</value>
+  </data>
+  <data name="SizeName_is_required" xml:space="preserve">
+    <value>The name of size is required</value>
+  </data>
+  <data name="SizeCode_is_required" xml:space="preserve">
+    <value>The code of size is required</value>
+  </data>
+  <data name="ColorCode_is_required" xml:space="preserve">
+    <value>The code of color is required</value>
+  </data>
+  <data name="ColorName_is_required" xml:space="preserve">
+    <value>The name of the color is required</value>
+  </data>
+  <data name="ColorName_is_duplicate" xml:space="preserve">
+    <value>The name of color is duplicate</value>
+  </data>
+  <data name="ColorCode_is_duplicate" xml:space="preserve">
+    <value>The code of color is duplicate</value>
+  </data>
+  <data name="MarketCode_is_required" xml:space="preserve">
+    <value>The code of market is required</value>
+  </data>
+  <data name="MarketName_is_required" xml:space="preserve">
+    <value>The name of the market is required</value>
+  </data>
+  <data name="MarketName_is_duplicate" xml:space="preserve">
+    <value>The name of the market is duplicated</value>
+  </data>
+  <data name="MarketCode_is_duplicate" xml:space="preserve">
+    <value>The code of the market is dublicated</value>
+  </data>
+  <data name="SeasonCode_is_required" xml:space="preserve">
+    <value>The code of season is required</value>
+  </data>
+  <data name="SeasonName_is_required" xml:space="preserve">
+    <value>The name of seasdon is required</value>
+  </data>
+  <data name="SeasonName_is_duplicate" xml:space="preserve">
+    <value>The name of season is duplicated</value>
+  </data>
+  <data name="SeasonCode_is_duplicate" xml:space="preserve">
+    <value>The code of season is duplicated</value>
+  </data>
+  <data name="TimeSlotName_is_required" xml:space="preserve">
+    <value>Time slot name is required</value>
+  </data>
+  <data name="TimeFrom_is_required" xml:space="preserve">
+    <value>Time from is required</value>
+  </data>
+  <data name="TimeTo_is_required" xml:space="preserve">
+    <value>Time to is required</value>
+  </data>
+  <data name="TimeFrom_not_bigger_than_TimeTo" xml:space="preserve">
+    <value>Time from must not bigger than time to</value>
+  </data>
+  <data name="TimeSlotName_is_exists" xml:space="preserve">
+    <value>Time slot name is exist</value>
+  </data>
+  <data name="TimeSlotCode_is_exists" xml:space="preserve">
+    <value>Time slot code is exist</value>
+  </data>
+  <data name="TimeSlot_is_not_exist" xml:space="preserve">
+    <value>Time slot is not exist</value>
+  </data>
+  <data name="order_cannot_be_deleted" xml:space="preserve">
+    <value>Production requirement that has been used to create an workorder cannot be deleted!</value>
+  </data>
+  <data name="The_list_of_workorder_has_duplicate_workordercode" xml:space="preserve">
+    <value>The list of workorder has duplicate workordercode</value>
+  </data>
+  <data name="Workordercode_" xml:space="preserve">
+    <value>Workordercode </value>
+  </data>
+  <data name="_already_in_the_system" xml:space="preserve">
+    <value> already in the system</value>
+  </data>
+  <data name="The_production_requirement_quantity_cannot_be_less_than_the_quantity_in_the_work_order" xml:space="preserve">
+    <value>The production requirement quantity cannot be less than the quantity in the work order</value>
+  </data>
+  <data name="The_file_is_empty_of_data" xml:space="preserve">
+    <value>The file is empty of data</value>
+  </data>
+  <data name="Line_" xml:space="preserve">
+    <value>Line </value>
+  </data>
+  <data name="_The_date_of_shipment_is_in_wrong_date_format_review_the_data_in_column_J" xml:space="preserve">
+    <value>: The date of shipment is in wrong date format, review the data in column J</value>
+  </data>
+  <data name="No_production_type_exists" xml:space="preserve">
+    <value>No production type exists</value>
+  </data>
+  <data name="_The_number_of_requests_is_in_the_wrong_positive_integer_format_review_the_data_in_column_I" xml:space="preserve">
+    <value>: The number of requests is in the wrong positive integer format, review the data in column I</value>
+  </data>
+  <data name="_The_required_number_must_be_greater_than_0_review_column_I_data" xml:space="preserve">
+    <value>: The required number must be greater than 0, review column I data</value>
+  </data>
+  <data name="File_format_is_incorrect" xml:space="preserve">
+    <value>File format is incorrect</value>
+  </data>
+  <data name="_Production_requirement_code_is_blank_review_column_B_data" xml:space="preserve">
+    <value>: Production order code is blank, review column B data</value>
+  </data>
+  <data name="_Production_requirement_code_cannot_exceed_50_characters_review_column_B_data" xml:space="preserve">
+    <value>: Production request code cannot exceed 50 characters, review column B data</value>
+  </data>
+  <data name="The_production_requirement_quantity_cannot_be_greater_than_the_quantity_in_the_order" xml:space="preserve">
+    <value>The production request quantity cannot be greater than the quantity in the order</value>
+  </data>
+  <data name="Shipment_date_cannot_be_blank_if_production_status_is_" xml:space="preserve">
+    <value>Shipment date cannot be blank if production status is </value>
+  </data>
+  <data name="_The_shipping_order_code_cannot_exceed_255_characters_review_the_data_in_column_G" xml:space="preserve">
+    <value>: The shipping order code cannot exceed 255 characters, review the data in column G</value>
+  </data>
+  <data name="_Production_order_code_contains_special_characters_or_spaces_review_column_B_data" xml:space="preserve">
+    <value>: Production order code contains special characters or spaces, review column B data</value>
+  </data>
+  <data name="_Order_code_is_empty_review_column_C_data" xml:space="preserve">
+    <value>: Order code is empty, review column C data</value>
+  </data>
+  <data name="_Order_code_cannot_exceed_50_characters_review_column_C_data" xml:space="preserve">
+    <value>: Order code cannot exceed 50 characters, review column C data</value>
+  </data>
+  <data name="_Internal_product_code_is_empty_review_column_D_data" xml:space="preserve">
+    <value>: Internal product code is empty, review column D data</value>
+  </data>
+  <data name="_Internal_product_code_cannot_exceed_50_characters_review_column_D_data" xml:space="preserve">
+    <value>: Internal product code cannot exceed 50 characters, review column D data</value>
+  </data>
+  <data name="_Customer_product_code_cannot_exceed_50_characters_review_column_F_data" xml:space="preserve">
+    <value>: Customer product code cannot exceed 50 characters, review column F data</value>
+  </data>
+  <data name="_Production_type_is_empty_review_column_H_data" xml:space="preserve">
+    <value>: Production type is empty, review column H data</value>
+  </data>
+  <data name="_Number_of_requests_is_empty_review_column_I_data" xml:space="preserve">
+    <value>: Number of requests is empty, review column I data</value>
+  </data>
+  <data name="_Empty_shipment_date_review_column_J_data" xml:space="preserve">
+    <value>: Empty shipment date, review column J data</value>
+  </data>
+  <data name="_and_line_" xml:space="preserve">
+    <value> and line </value>
+  </data>
+  <data name="_Duplicate_production_requirement_code_review_column_B_data" xml:space="preserve">
+    <value>: Duplicate production request code, review column B data</value>
+  </data>
+  <data name="_Requirement_code" xml:space="preserve">
+    <value>: Request code</value>
+  </data>
+  <data name="_already_exists_on_the_system_review_column_B_data" xml:space="preserve">
+    <value> already exists on the system, review column B data</value>
+  </data>
+  <data name="Norm_code_cannot_be_left_blank" xml:space="preserve">
+    <value>Bom code cannot be left blank</value>
+  </data>
+  <data name="The_quota_code_cannot_exceed_50_characters" xml:space="preserve">
+    <value>The bom code cannot exceed 50 characters</value>
+  </data>
+  <data name="Norm_name_cannot_be_empty" xml:space="preserve">
+    <value>Bom name cannot be empty</value>
+  </data>
+  <data name="Norm_names_cannot_exceed_250_characters" xml:space="preserve">
+    <value>Bom name cannot exceed 250 characters</value>
+  </data>
+  <data name="Effective_date_cannot_be_blank" xml:space="preserve">
+    <value>Effective date cannot be blank</value>
+  </data>
+  <data name="Effective_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>Effective date is in wrong date format</value>
+  </data>
+  <data name="Unit_price_type_cannot_be_left_blank" xml:space="preserve">
+    <value>Unit price type cannot be left blank</value>
+  </data>
+  <data name="Technology_coefficient_cannot_be_left_blank" xml:space="preserve">
+    <value>Technology coefficient cannot be left blank</value>
+  </data>
+  <data name="No_process_list_exists" xml:space="preserve">
+    <value>No process list exists</value>
+  </data>
+  <data name="A_detailed_description_list_does_not_exist" xml:space="preserve">
+    <value>A detailed description list does not exist</value>
+  </data>
+  <data name="No_detailed_description_of_" xml:space="preserve">
+    <value>No detailed description of </value>
+  </data>
+  <data name="No_norms_found_on_the_system" xml:space="preserve">
+    <value>No bom found on the system</value>
+  </data>
+  <data name="Norm_information_cannot_be_edited" xml:space="preserve">
+    <value>Bom can only be edited in the "Create New" or "Reject" status</value>
+  </data>
+  <data name="Rating_information_cannot_be_deleted" xml:space="preserve">
+    <value>Bom can only be deleted in the "Create New" status</value>
+  </data>
+  <data name="Product_code_cannot_be_blank" xml:space="preserve">
+    <value>Product code cannot be blank</value>
+  </data>
+  <data name="Product_code_cannot_exceed_50_characters" xml:space="preserve">
+    <value>Product code cannot exceed 50 characters</value>
+  </data>
+  <data name="Workordercode_cannot_be_left_blank" xml:space="preserve">
+    <value>Work order code cannot be left blank</value>
+  </data>
+  <data name="Workorder_document_number_cannot_be_left_blank" xml:space="preserve">
+    <value>Work order document number cannot be left blank</value>
+  </data>
+  <data name="Workordercode_cannot_exceed_50_characters" xml:space="preserve">
+    <value>Work order code cannot exceed 150 characters</value>
+  </data>
+  <data name="Work_order_name_cannot_be_left_blank" xml:space="preserve">
+    <value>Work order name cannot be left blank</value>
+  </data>
+  <data name="Work_order_name_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Work order name cannot exceed 255 characters</value>
+  </data>
+  <data name="The_end_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>The end date is in wrong date format</value>
+  </data>
+  <data name="Workorderorder_bases_cannot_exceed_500_characters" xml:space="preserve">
+    <value>Work order bases cannot exceed 500 characters</value>
+  </data>
+  <data name="Note_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Note cannot exceed 1000 characters</value>
+  </data>
+  <data name="The_assignment_list_does_not_have_any_records" xml:space="preserve">
+    <value>The assignment list does not have any records</value>
+  </data>
+  <data name="The_work_order_code_already_exists_in_the_system" xml:space="preserve">
+    <value>The work order code already exists in the system</value>
+  </data>
+  <data name="The_work_order_code_does_not_exist_in_the_system" xml:space="preserve">
+    <value>The work order code does not exist in the system</value>
+  </data>
+  <data name="The_work_order_code_overlaps_with_other_production_order_codes_that_exist_in_the_system" xml:space="preserve">
+    <value>The work order code overlaps with other production order codes that exist in the system</value>
+  </data>
+  <data name="Work_order_with_a_status_of_Initialize_can_only_be_edited" xml:space="preserve">
+    <value>Work order with a status of "Create New" can only be edited</value>
+  </data>
+  <data name="Work_order_with_an_approval_status_of_Initialize_can_only_be_edited" xml:space="preserve">
+    <value>Work order with an approval status of "Create New" or "Rejected" can only be edited</value>
+  </data>
+  <data name="Work_order_with_an_approval_status_of_Initialize_can_only_be_deleted" xml:space="preserve">
+    <value>Work order with an approval status of "Create New" can only be deleted</value>
+  </data>
+  <data name="Step_name_cannot_be_empty" xml:space="preserve">
+    <value>Step name cannot be empty</value>
+  </data>
+  <data name="Step_name_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Step name cannot exceed 255 characters</value>
+  </data>
+  <data name="The_quantity_cannot_be_blank_and_must_be_greater_than_0" xml:space="preserve">
+    <value>The quantity cannot be blank and must be greater than 0</value>
+  </data>
+  <data name="Notes_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Note cannot exceed 255 characters</value>
+  </data>
+  <data name="Product_code_is_blank" xml:space="preserve">
+    <value>Product code is blank</value>
+  </data>
+  <data name="The_quantity_cannot_be_left_blank_and_must_be_greater_than_0" xml:space="preserve">
+    <value>The quantity cannot be left blank and must be greater than 0</value>
+  </data>
+  <data name="The_task_name_cannot_be_longer_than_225_characters" xml:space="preserve">
+    <value>The task name cannot be longer than 225 characters</value>
+  </data>
+  <data name="The_execution_unit_cannot_be_left_blank" xml:space="preserve">
+    <value>The execution unit cannot be left blank</value>
+  </data>
+  <data name="Start_date_cannot_be_blank" xml:space="preserve">
+    <value>Start date cannot be blank</value>
+  </data>
+  <data name="The_start_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>The start date is in wrong date format</value>
+  </data>
+  <data name="End_date_cannot_be_blank" xml:space="preserve">
+    <value>End date cannot be blank</value>
+  </data>
+  <data name="End_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>End date is in wrong date format</value>
+  </data>
+  <data name="It_is_not_possible_to_delete_bom_with_work_order" xml:space="preserve">
+    <value>The bom associated with a work order cannot be deleted</value>
+  </data>
+  <data name="The_effective_date_cannot_be_greater_than_the_effective_date_of_the_latest_version" xml:space="preserve">
+    <value>The effective date cannot be less than or equal to the effective date of the latest version</value>
+  </data>
+  <data name="BomJobSetting_CreateOrUpdate_Error_Required" xml:space="preserve">
+    <value>Please enter required information.</value>
+  </data>
+  <data name="Unable_to_create_additional_browsers" xml:space="preserve">
+    <value>Unable to create additional browsers!</value>
+  </data>
+  <data name="Bom_do_not_exist" xml:space="preserve">
+    <value>Bom does not exist!</value>
+  </data>
+  <data name="The_quota_approval_status_must_be_create_or_deny" xml:space="preserve">
+    <value>The quota approval status must be create or deny!</value>
+  </data>
+  <data name="Assignment_setting_does_not_exist" xml:space="preserve">
+    <value>Assignment setting does not exist</value>
+  </data>
+  <data name="The_approval_form_and_the_process_do_not_match" xml:space="preserve">
+    <value>The approval form and the process do not match!</value>
+  </data>
+  <data name="Approval_document_does_not_exist" xml:space="preserve">
+    <value>Approval document does not exist!</value>
+  </data>
+  <data name="No_job_assignment_information_exists" xml:space="preserve">
+    <value>No job assignment information exists</value>
+  </data>
+  <data name="Menu_does_not_exist_or_is_not_an_action_menu" xml:space="preserve">
+    <value>Menu does not exist or is not an action menu</value>
+  </data>
+  <data name="Action_does_not_exist" xml:space="preserve">
+    <value>Action does not exist</value>
+  </data>
+  <data name="Menu_does_not_exist" xml:space="preserve">
+    <value>Menu does not exist</value>
+  </data>
+  <data name="The_menu_has_an_existing_submenu" xml:space="preserve">
+    <value>The menu has an existing submenu</value>
+  </data>
+  <data name="Menu_has_been_used_for_decentralization" xml:space="preserve">
+    <value>Menu has been used for decentralization</value>
+  </data>
+  <data name="No_rights_exist" xml:space="preserve">
+    <value>No rights exist</value>
+  </data>
+  <data name="No_user_exists_in_the_system" xml:space="preserve">
+    <value>No user exists in the system!</value>
+  </data>
+  <data name="No_rights_exist_on_the_system" xml:space="preserve">
+    <value>No rights exist on the system</value>
+  </data>
+  <data name="label_all" xml:space="preserve">
+    <value>All</value>
+  </data>
+</root>

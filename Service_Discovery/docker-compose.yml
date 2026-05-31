@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  consul:
+    image: hashicorp/consul:1.18
+    container_name: consul
+    restart: unless-stopped
+    ports:
+      - "8500:8500"   # HTTP API & Web UI
+      - "8600:8600/udp" # DNS
+    volumes:
+      - ./consul/config:/consul/config
+      - ./consul/data:/consul/data
+    command: "agent -server -bootstrap-expect=1 -ui -client=0.0.0.0 -bind=0.0.0.0"
+    healthcheck:
+      test: ["CMD", "consul", "members"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  default:
+    name: microservice-network
+    external: true

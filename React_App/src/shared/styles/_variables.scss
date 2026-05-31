@@ -1,0 +1,20 @@
+// Design tokens — import trong từng file .module.scss: @use '.../variables' as *;
+
+$primary: #6366f1;
+$primary-dark: #4f46e5;
+$success: #22c55e;
+$error: #ef4444;
+$warning: #f59e0b;
+$text: #1e293b;
+$text-muted: #64748b;
+$bg: #f8fafc;
+$card-bg: #ffffff;
+$border: #e2e8f0;
+$radius: 12px;
+$shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+$code-bg: #0f172a;
+
+$status-idle: #94a3b8;
+$status-loading: #f59e0b;
+$status-ok: #22c55e;
+$status-error: #ef4444;

@@ -1,0 +1,52 @@
+﻿services:
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "6789:8080"
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: dev
+      ASPNETCORE_URLS: http://+:8080
+
+      Appsettings__DefaultConnection: "Server=103.166.185.39; Port=5432; Database=ManageDepartment; User Id=postgres; Password=123456aA@;"
+      Appsettings__ConfigurationConnectString: ""
+      Appsettings__Api_Gateway: http://192.168.2.103:3028
+      Appsettings__Api_Authority: http://172.31.2.120:8080
+
+      Appsettings__Rabbitmq_UserName: Administrator
+      Appsettings__Rabbitmq_Password: 1qazXSW@
+      Appsettings__Rabbitmq_VirtualHost: /
+      Appsettings__Rabbitmq_HostName: 192.168.2.103
+      Appsettings__Rabbitmq_Port: "5672"
+      Appsettings__Rabbitmq_Queue_Sop: SopQueues
+      Appsettings__Rabbitmq_Queue_Log_Service: LogServiceQueues
+      Appsettings__Rabbitmq_Queue_Servce_Business: ServiceBusinessQueue
+
+      Appsettings__DataProtectionKeys: DataProtection-Keys
+      Appsettings__UrlRedisCahe: 172.31.2.121:6379
+      Appsettings__PermissionKey: "PERMISSION:{userID}"
+      Appsettings__RedisUser: ""
+      Appsettings__RedisPass: 123456aA@
+      Appsettings__isCheckPermission: "false"
+      Appsettings__Realm: z113-qa
+      Appsettings__AuthServerUrl: http://172.31.2.120:8070/
+      Appsettings__Resource: evomes
+
+      ElasticConfiguration__Uri: http://172.31.2.121:25
+
+      JsonWebTokenKeys__ValidateIssuerSigningKey: "true"
+      JsonWebTokenKeys__IssuerSigningKey: 44k63553-15C1-5769-9133-EFAF45A9B705
+      JsonWebTokenKeys__ValidateIssuer: "true"
+      JsonWebTokenKeys__ValidIssuer: https://localhost:44358
+      JsonWebTokenKeys__ValidateAudience: "true"
+      JsonWebTokenKeys__ValidAudience: https://localhost:44358
+      JsonWebTokenKeys__RequireExpirationTime: "true"
+      JsonWebTokenKeys__ValidateLifetime: "true"
+      JsonWebTokenKeys__ExpaiTime: "1"
+
+# docker compose build
+# docker compose up -d
+# docker compose logs -f api
+# Swagger: http://localhost:6789/swagger

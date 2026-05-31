@@ -1,0 +1,27 @@
+@use '../../../../shared/styles/variables' as *;
+
+.section {
+  background: $card-bg;
+  border-radius: $radius;
+  padding: 24px;
+  box-shadow: $shadow;
+  margin-bottom: 32px;
+  border: 1px solid $border;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary {
+  margin-top: 8px;
+}

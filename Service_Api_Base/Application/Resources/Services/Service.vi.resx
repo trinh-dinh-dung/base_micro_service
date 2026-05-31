@@ -1,0 +1,1383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="CalendarManagement_is_not_exist" xml:space="preserve">
+    <value>CalendarManagement không tồn tại</value>
+  </data>
+  <data name="Name_is_required" xml:space="preserve">
+    <value>Tên bắt buộc nhập</value>
+  </data>
+  <data name="Name_is_exists" xml:space="preserve">
+    <value>Tên đã bị trùng, không thể lấy tên này</value>
+  </data>
+  <data name="Description_is_required" xml:space="preserve">
+    <value>Mô tả bắt buộc nhập</value>
+  </data>
+  <data name="Work_Area_is_required" xml:space="preserve">
+    <value>Work Area bắt buộc nhập</value>
+  </data>
+  <data name="Work_area_is_setting_calender" xml:space="preserve">
+    <value>Một Work area chỉ được áp dụng một lịch làm</value>
+  </data>
+  <data name="Workcenterid_is_required" xml:space="preserve">
+    <value>Workcenterid là bắt buộc</value>
+  </data>
+  <data name="Managerid_is_required" xml:space="preserve">
+    <value>Managerid là bắt buộc</value>
+  </data>
+  <data name="Code_is_exists" xml:space="preserve">
+    <value>Code đã tồn tại</value>
+  </data>
+  <data name="WorkerId_is_required" xml:space="preserve">
+    <value>WorkerId là bắt buộc</value>
+  </data>
+  <data name="SkillId_is_required" xml:space="preserve">
+    <value>SkillId là bắt buộc</value>
+  </data>
+  <data name="Startdatetraining_is_required" xml:space="preserve">
+    <value>Startdatetraining là bắt buộc</value>
+  </data>
+  <data name="Enddatetraining_is_required" xml:space="preserve">
+    <value>Enddatetraining là bắt buộc</value>
+  </data>
+  <data name="Startdatetraining_not_bigger_than_Enddatetraining" xml:space="preserve">
+    <value>Thời gian bắt đầu không được lớn hơn thời gian kết thúc</value>
+  </data>
+  <data name="SkillId_is_exists" xml:space="preserve">
+    <value>SkillId đã tồn tại</value>
+  </data>
+  <data name="WorkerSkill_is_not__exists" xml:space="preserve">
+    <value>WorkerSkill không tồn tại</value>
+  </data>
+  <data name="Process_name_is_required" xml:space="preserve">
+    <value>Tên quy trình là bắt buộc</value>
+  </data>
+  <data name="Type_of_approval_is_required" xml:space="preserve">
+    <value>Loại quy trình là bắt buộc</value>
+  </data>
+  <data name="Please_select_approval_levels" xml:space="preserve">
+    <value>Hãy chọn các cấp độ phê duyệt</value>
+  </data>
+  <data name="Process_name_is_exists" xml:space="preserve">
+    <value>Tên quy trình đã tồn tại</value>
+  </data>
+  <data name="Levels_are_duplicated" xml:space="preserve">
+    <value>Cấp độ bị trùng lặp</value>
+  </data>
+  <data name="First_step_level_should_be_one" xml:space="preserve">
+    <value>Cấp độ bước đầu tiên phải là 1</value>
+  </data>
+  <data name="Level_names_cannot_be_duplicated" xml:space="preserve">
+    <value>Tên cấp độ không được trùng lặp</value>
+  </data>
+  <data name="Approval_name_cannot_be_duplicated" xml:space="preserve">
+    <value>Tên người phê duyệt không được trùng lặp</value>
+  </data>
+  <data name="Level_is_required" xml:space="preserve">
+    <value>Cấp độ là bắt buộc</value>
+  </data>
+  <data name="Level_name_is_required" xml:space="preserve">
+    <value>Tên cấp độ là bắt buộc</value>
+  </data>
+  <data name="Approval_is_required" xml:space="preserve">
+    <value>Người phê duyệt là bắt buộc</value>
+  </data>
+  <data name="Process_is_not_exist" xml:space="preserve">
+    <value>Quy trình không tồn tại</value>
+  </data>
+  <data name="Typeapproval_is_required" xml:space="preserve">
+    <value>Typeapproval là bắt buộc</value>
+  </data>
+  <data name="Typeapproval_is_not_correct" xml:space="preserve">
+    <value>Typeapproval không đúng</value>
+  </data>
+  <data name="Iddoc_is_required" xml:space="preserve">
+    <value>Iddoc là bắt buộc</value>
+  </data>
+  <data name="ListApprovalStepRequest_is_required" xml:space="preserve">
+    <value>ListApprovalStepRequest là bắt buộc</value>
+  </data>
+  <data name="Level_must_be_greater_than_0" xml:space="preserve">
+    <value>Cấp độ phải lớn hơn 0</value>
+  </data>
+  <data name="Cannot_add_ticket_creator_in_approval_step" xml:space="preserve">
+    <value>Không thể thêm người tạo phiếu yêu cầu vào bước phê duyệt</value>
+  </data>
+  <data name="SOP_is_not_exist" xml:space="preserve">
+    <value>SOP không tồn tại</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Lần</value>
+  </data>
+  <data name="Approval_is_not_exist" xml:space="preserve">
+    <value>Trình phê duyệt không tồn tại</value>
+  </data>
+  <data name="SOP_document_not_found" xml:space="preserve">
+    <value>Tài liệu SOP không tìm thấy</value>
+  </data>
+  <data name="Approvalid_is_required" xml:space="preserve">
+    <value>Approvalid là bắt buộc</value>
+  </data>
+  <data name="TypeApproval_is_incorrect" xml:space="preserve">
+    <value>TypeApproval không đúng</value>
+  </data>
+  <data name="Comment_is_required" xml:space="preserve">
+    <value>Comment là bắt buộc</value>
+  </data>
+  <data name="Approval_slip_is_not_exist" xml:space="preserve">
+    <value>Phiếu phê duyệt không tồn tại</value>
+  </data>
+  <data name="Slip_approved_or_rejected" xml:space="preserve">
+    <value>Phiếp đã được phê duyệt hoặc từ chối</value>
+  </data>
+  <data name="You_have_not_been_approved_yet" xml:space="preserve">
+    <value>Bạn chưa đến lượt phê duyệt</value>
+  </data>
+  <data name="Surname_is_required" xml:space="preserve">
+    <value>Surname là bắt buộc</value>
+  </data>
+  <data name="Code_is_required" xml:space="preserve">
+    <value>Code là bắt buộc</value>
+  </data>
+  <data name="Dateofbirth_is_required" xml:space="preserve">
+    <value>Dateofbirth là bắt buộc</value>
+  </data>
+  <data name="Gender_is_required" xml:space="preserve">
+    <value>Gender là bắt buộc</value>
+  </data>
+  <data name="Phone_is_required" xml:space="preserve">
+    <value>Phone là bắt buộc</value>
+  </data>
+  <data name="Email_is_required" xml:space="preserve">
+    <value>Email là bắt buộc</value>
+  </data>
+  <data name="Addressprovincescode_is_required" xml:space="preserve">
+    <value>Addressprovincescode là bắt buộc</value>
+  </data>
+  <data name="Addressdistrictscode_is_required" xml:space="preserve">
+    <value>Addressdistrictscode là bắt buộc</value>
+  </data>
+  <data name="Hometownprovincescode_is_required" xml:space="preserve">
+    <value>Hometownprovincescode là bắt buộc</value>
+  </data>
+  <data name="Hometowndistrictscode_is_required" xml:space="preserve">
+    <value>Hometowndistrictscode là bắt buộc</value>
+  </data>
+  <data name="Usercontactname_is_required" xml:space="preserve">
+    <value>Usercontactname là bắt buộc</value>
+  </data>
+  <data name="Usercontactrelationship_is_required" xml:space="preserve">
+    <value>Usercontactrelationship là bắt buộc</value>
+  </data>
+  <data name="Usercontactaddress_is_required" xml:space="preserve">
+    <value>Usercontactaddress là bắt buộc</value>
+  </data>
+  <data name="Usercontactphone_is_required" xml:space="preserve">
+    <value>Usercontactphone là bắt buộc</value>
+  </data>
+  <data name="workareaId_is_required" xml:space="preserve">
+    <value>workareaId là bắt buộc</value>
+  </data>
+  <data name="Phone_is_exist" xml:space="preserve">
+    <value>Phone đã tồn tại</value>
+  </data>
+  <data name="Email_is_exist" xml:space="preserve">
+    <value>Email đã tồn tại</value>
+  </data>
+  <data name="Sign_is_required" xml:space="preserve">
+    <value>	Sign là bắt buộc</value>
+  </data>
+  <data name="GroupworkdayId_is_required" xml:space="preserve">
+    <value>	GroupworkdayId là bắt buộc</value>
+  </data>
+  <data name="GroupworkdayId_is_not_exists" xml:space="preserve">
+    <value>	GroupworkdayId không tồn tại</value>
+  </data>
+  <data name="StartTime_is_required" xml:space="preserve">
+    <value>Thời gian bắt đầu là bắt buộc</value>
+  </data>
+  <data name="EndTime_is_required" xml:space="preserve">
+    <value>Thời gian kết thúc là bắt buộc</value>
+  </data>
+  <data name="StartTime_not_bigger_than_EndTime" xml:space="preserve">
+    <value>Thời gian bắt đầu không được lớn hơn thời gian kết thúc</value>
+  </data>
+  <data name="Issocialinsurance_is_required" xml:space="preserve">
+    <value>Issocialinsurance là bắt buộc</value>
+  </data>
+  <data name="ListShiftmanagementId_is_wrong" xml:space="preserve">
+    <value>ListShiftmanagementId không chính xác</value>
+  </data>
+  <data name="Sign_is_exist" xml:space="preserve">
+    <value>Ký hiệu đã tồn tại</value>
+  </data>
+  <data name="WorkDayType_is_not_exist" xml:space="preserve">
+    <value>WorkDayType không tồn tại</value>
+  </data>
+  <data name="WorkDayType_already_used_in_calendarsetting_is_not_deleted" xml:space="preserve">
+    <value>Loại ngày làm việc đã được sử dụng ở cài đặt lịch, không được xóa</value>
+  </data>
+  <data name="Year_is_required" xml:space="preserve">
+    <value>Năm là bắt buộc</value>
+  </data>
+  <data name="Month_is_required" xml:space="preserve">
+    <value>Tháng là bắt buộc</value>
+  </data>
+  <data name="Data_is_not_exist" xml:space="preserve">
+    <value>Không có dữ liệu</value>
+  </data>
+  <data name="Workdaytypeid_is_required" xml:space="preserve">
+    <value>Workdaytypeid là bắt buộc</value>
+  </data>
+  <data name="Year_is_not_correct" xml:space="preserve">
+    <value>Năm không đúng</value>
+  </data>
+  <data name="Month_is_not_correct" xml:space="preserve">
+    <value>Tháng không đúng</value>
+  </data>
+  <data name="Day_is_not_correct" xml:space="preserve">
+    <value>Ngày không đúng</value>
+  </data>
+  <data name="is_exist" xml:space="preserve">
+    <value>đã tồn tại</value>
+  </data>
+  <data name="Calendarsetting_is_not_exist" xml:space="preserve">
+    <value>Lập lịch không tồn tại</value>
+  </data>
+  <data name="ConfigGen_is_not_exist" xml:space="preserve">
+    <value>ConfigGen không tồn tại</value>
+  </data>
+  <data name="Color_is_required" xml:space="preserve">
+    <value>màu là bắt buộc</value>
+  </data>
+  <data name="GroupWorkday_is_not_exist" xml:space="preserve">
+    <value>Nhóm ngày làm việc không tồn tại</value>
+  </data>
+  <data name="GroupWorkDay_already_used_in_WorkDayType_is_not_deleted" xml:space="preserve">
+    <value>Nhóm ngày làm việc đã được sử dụng trong loại ngày làm việc không được xóa</value>
+  </data>
+  <data name="WorkCenter_is_not_exist" xml:space="preserve">
+    <value>WorkCenter không tồn tại</value>
+  </data>
+  <data name="WorkCenter_already_used_in_workunit_is_not_deleted" xml:space="preserve">
+    <value>Trung tâm sản xuất đã có liên kết với đơn vị sản xuất, không thể xóa</value>
+  </data>
+  <data name="TypeId_is_required" xml:space="preserve">
+    <value>TypeId là bắt buộc</value>
+  </data>
+  <data name="WorkAreaParent_is_not_exist" xml:space="preserve">
+    <value>WorkAreaParent không tồn tại</value>
+  </data>
+  <data name="WorkArea_is_not_exist" xml:space="preserve">
+    <value>WorkArea không tồn tại</value>
+  </data>
+  <data name="Please_delete_the_smaller_work_area_first" xml:space="preserve">
+    <value>Vui lòng xóa khu vực làm việc nhỏ hơn trước</value>
+  </data>
+  <data name="Workarea_is_not_deleted" xml:space="preserve">
+    <value>Khu vực sản xuất đã có dữ liệu liên kết, không thể xóa</value>
+  </data>
+  <data name="Skill_is_not_exist" xml:space="preserve">
+    <value>Skill không tồn tại</value>
+  </data>
+  <data name="Skill_already_used_in_worker_is_not_deleted" xml:space="preserve">
+    <value>Kỹ năng đã được sử dụng cho người lao động,không thể xóa</value>
+  </data>
+  <data name="Productionrequirement_is_exists" xml:space="preserve">
+    <value>Yêu cầu sản xuất đã tồn tại</value>
+  </data>
+  <data name="Productionrequirement_is_not_exist" xml:space="preserve">
+    <value>Yêu cầu sản xuất không tồn tại</value>
+  </data>
+  <data name="Productionrequirementcode_cannot_be_empty_or_null" xml:space="preserve">
+    <value>Productionrequirementcode không được để trống</value>
+  </data>
+  <data name="Productcode_cannot_be_empty_or_null" xml:space="preserve">
+    <value>Productcode không được để trống</value>
+  </data>
+  <data name="Sign_is_exists" xml:space="preserve">
+    <value>Ký hiệu đã tồn tại</value>
+  </data>
+  <data name="StartTime_of_recreation_is_required" xml:space="preserve">
+    <value>Thời gian bắt đầu khởi tạo lại là bắt buộc</value>
+  </data>
+  <data name="EndTime_of_recreation_is_required" xml:space="preserve">
+    <value>Thời gian kết thúc khởi tại lại là bắt buộc</value>
+  </data>
+  <data name="StartTime_of_recreation_not_bigger_than_EndTime" xml:space="preserve">
+    <value>Thời gian giải lao bắt đầu không thể lớn hơn hoặc bằng thời gian kết thúc</value>
+  </data>
+  <data name="ShiftManagement_is_not_exist" xml:space="preserve">
+    <value>ShiftManagement không tồn tại</value>
+  </data>
+  <data name="ShiftManagement_is_used_to_generate_WorkDayType" xml:space="preserve">
+    <value>ShiftManagement đã được sử dụng để tạo WorkDayType</value>
+  </data>
+  <data name="CalendarManagementId_is_required" xml:space="preserve">
+    <value>CalendarManagementId là bắt buộc</value>
+  </data>
+  <data name="Worker_is_not__exists" xml:space="preserve">
+    <value>Worker không tồn tại</value>
+  </data>
+  <data name="SOP_name_cannot_be_duplicated" xml:space="preserve">
+    <value>Tên của SOP không được trùng lặp</value>
+  </data>
+  <data name="SOP_version_name_cannot_be_duplicated" xml:space="preserve">
+    <value>Tên version SOP không được trùng lặp</value>
+  </data>
+  <data name="Version_SOP_is_not_exist" xml:space="preserve">
+    <value>Version SOP không tồn tại</value>
+  </data>
+  <data name="Version_already_has_a_different_action_cannot_be_fixed" xml:space="preserve">
+    <value>Version đã có hành động khác, không thể sửa</value>
+  </data>
+  <data name="There_is_no_new_version_for_browsing" xml:space="preserve">
+    <value>Không có version mới để trình duyệt</value>
+  </data>
+  <data name="Bom_is_not_exist" xml:space="preserve">
+    <value>Bom không tồn tại</value>
+  </data>
+  <data name="Sopversion_is_not_exist" xml:space="preserve">
+    <value>Sopversion không tồn tại</value>
+  </data>
+  <data name="Bomversion_is_not_exist" xml:space="preserve">
+    <value>Bomversion không tồn tại</value>
+  </data>
+  <data name="Processversion_is_not_exist" xml:space="preserve">
+    <value>Processversion không tồn tại</value>
+  </data>
+  <data name="must_be_greater_than_or_equal_to_0" xml:space="preserve">
+    <value>phải lớn hơn hoặc bằng 0</value>
+  </data>
+  <data name="cannot_be_empty_or_null" xml:space="preserve">
+    <value>không được để trống hoặc để rỗng</value>
+  </data>
+  <data name="must_be_greater_than_0" xml:space="preserve">
+    <value>phải lớn hơn 0</value>
+  </data>
+  <data name="Timedeparture_cannot_be_less_than_current_date" xml:space="preserve">
+    <value>Ngày xuất hàng không được nhỏ hơn ngày hiện tại</value>
+  </data>
+  <data name="Unable_to_delete_version" xml:space="preserve">
+    <value>Không thể xóa version duy nhất</value>
+  </data>
+  <data name="Version_Process_is_not_exist" xml:space="preserve">
+    <value>Version Process không tồn tại</value>
+  </data>
+  <data name="This_is_the_version_in_use_cannot_be_deleted" xml:space="preserve">
+    <value>Đây là version đang sử dụng, không thể xóa</value>
+  </data>
+  <data name="Modelcode_is_wrong" xml:space="preserve">
+    <value>Modelcode không hợp lệ</value>
+  </data>
+  <data name="Modelcode_is_required" xml:space="preserve">
+    <value>Modelcode là bắt buộc</value>
+  </data>
+  <data name="Modelname_is_required" xml:space="preserve">
+    <value>Modelname là bắt buộc</value>
+  </data>
+  <data name="Model_is_exists" xml:space="preserve">
+    <value>Model đã tồn tại</value>
+  </data>
+  <data name="Model_is_not_exists" xml:space="preserve">
+    <value>Model không tồn tại</value>
+  </data>
+  <data name="Please_remove_the_product_before_deleting_this_model" xml:space="preserve">
+    <value>Model đang liên kết với sản phẩm, không thể xóa</value>
+  </data>
+  <data name="ProductCode_is_wrong" xml:space="preserve">
+    <value>Mã sản phẩm không đúng</value>
+  </data>
+  <data name="ProductCode_is_required" xml:space="preserve">
+    <value>Mã sản phẩm là bắt buộc</value>
+  </data>
+  <data name="ProductName_is_required" xml:space="preserve">
+    <value>ProductName là bắt buộc</value>
+  </data>
+  <data name="ProductCode_is_exists" xml:space="preserve">
+    <value>Mã sản phẩm đã tồn tại</value>
+  </data>
+  <data name="ProductName_is_exists" xml:space="preserve">
+    <value>ProductName đã tồn tại</value>
+  </data>
+  <data name="Product_is_not_exists" xml:space="preserve">
+    <value>Sản phẩm không tồn tại</value>
+  </data>
+  <data name="Unable_to_create_new_SOP_version" xml:space="preserve">
+    <value>Không thể tạo mới SOP Version</value>
+  </data>
+  <data name="SOP_name_cannot_be_empty_or_null" xml:space="preserve">
+    <value>Tên SOP không được để trống</value>
+  </data>
+  <data name="SOP_Version_name_cannot_be_empty_or_null" xml:space="preserve">
+    <value>Tên SOP version không được để trống</value>
+  </data>
+  <data name="Schedule_has_been_set_cannot_be_deleted" xml:space="preserve">
+    <value>Lịch làm đã được cài đặt, không thể xóa</value>
+  </data>
+  <data name="Link_process_with_workcenter" xml:space="preserve">
+    <value>Liên kết không tồn tại</value>
+  </data>
+  <data name="Code_workArea" xml:space="preserve">
+    <value>Mã ĐVSX tối đa độ dài 9 ký tự UPPER, chỉ bao gồm số và chữ, không có khoảng trắng</value>
+  </data>
+  <data name="Do_not_duplicate_the_code" xml:space="preserve">
+    <value>Mã TTSX, KVSX, đơn vị sản xuất không được trùng nhau</value>
+  </data>
+  <data name="Duplicate_the_code" xml:space="preserve">
+    <value>Mã đã bị trùng không thể lấy mã này </value>
+  </data>
+  <data name="Already_exist_a_work_cente_with_the_process" xml:space="preserve">
+    <value>Đã tồn tại trung tâm sản xuất liên kết với quy trình, không thể xóa</value>
+  </data>
+  <data name="The_work_unit_has_linked_data_it_cannot_be_deleted" xml:space="preserve">
+    <value>Đơn vị sản xuất đã có dự liệu liên kết, không thể xóa</value>
+  </data>
+  <data name="A_workarea_associated_with_the_process_already_exists" xml:space="preserve">
+    <value>Đã tồn tại TTSX liên kết với quy trình</value>
+  </data>
+  <data name="Link_does_not_exist" xml:space="preserve">
+    <value>Liên kết không tồn tại</value>
+  </data>
+  <data name="Work_center_cannot_be_empty" xml:space="preserve">
+    <value>Trung tâm sản xuất không được để trống</value>
+  </data>
+  <data name="Product_cannot_be_empty" xml:space="preserve">
+    <value>Sản phẩm không được để trống</value>
+  </data>
+  <data name="Process_cannot_be_empty" xml:space="preserve">
+    <value>Quy trình sản xuất không được để trống</value>
+  </data>
+  <data name="Yield_must_be_greater_than_0" xml:space="preserve">
+    <value>Năng suất phải lớn hơn 0</value>
+  </data>
+  <data name="Setting_time_must_be_greater_than_0" xml:space="preserve">
+    <value>Thời gian cài đặt phải lớn hơn 0</value>
+  </data>
+  <data name="Name_cannot_exceed_100_characters" xml:space="preserve">
+    <value>Tên không được quá 100 ký tự</value>
+  </data>
+  <data name="Note_cannot_exceed_200_characters" xml:space="preserve">
+    <value>Ghi chú không được quá 200 ký tự</value>
+  </data>
+  <data name="BOM_Version_has_been_not_aprovel" xml:space="preserve">
+    <value>Version mới chưa được phê duyệt</value>
+  </data>
+  <data name="Bom_is_null" xml:space="preserve">
+    <value>BOM không có giá trị</value>
+  </data>
+  <data name="Cant_find_BOM_in_system" xml:space="preserve">
+    <value>Không tìm thấy BOM trong hệ thống</value>
+  </data>
+  <data name="Cant_find_version" xml:space="preserve">
+    <value>Không tìm thấy version</value>
+  </data>
+  <data name="Product_already_exists_BOM" xml:space="preserve">
+    <value>Sản phẩm đã tồn tại BOM</value>
+  </data>
+  <data name="BOMcode_already_exists_in_system" xml:space="preserve">
+    <value>Đã tồn tại mã BOM trong hệ thống</value>
+  </data>
+  <data name="BOMcode_does_not_exists" xml:space="preserve">
+    <value>Mã BOM không tồn tại</value>
+  </data>
+  <data name="BOMcode_is_required" xml:space="preserve">
+    <value>Mã BOM là bắt buộc</value>
+  </data>
+  <data name="BOMversion_does_not_exists" xml:space="preserve">
+    <value>BOM version không tồn tại</value>
+  </data>
+  <data name="BOMversion_is_using_cant_remove" xml:space="preserve">
+    <value>BOM version đang sử dụng, không thể xóa</value>
+  </data>
+  <data name="Cant_remove_lastest_version" xml:space="preserve">
+    <value>Không thể xóa version cuối cùng</value>
+  </data>
+  <data name="The_latest_version_is_available_cannot_create_a_new_one" xml:space="preserve">
+    <value>Đã có version mới nhất, không thể tạo mới</value>
+  </data>
+  <data name="ListStepversionprocessRequest_is_required" xml:space="preserve">
+    <value>Các bước là bắt buộc</value>
+  </data>
+  <data name="Step_Name_is_required" xml:space="preserve">
+    <value>Tên bước là bắt buộc</value>
+  </data>
+  <data name="Stepnames_cannot_be_duplicated" xml:space="preserve">
+    <value>Tên bước không thể trùng lặp</value>
+  </data>
+  <data name="Operationtime_is_required" xml:space="preserve">
+    <value>Thời gian thao tác là bắt buộc</value>
+  </data>
+  <data name="Steplevel_is_required" xml:space="preserve">
+    <value>Steplevel là bắt buộc</value>
+  </data>
+  <data name="Steplevels_cannot_be_duplicated" xml:space="preserve">
+    <value>Steplevels không thể trùng lặp</value>
+  </data>
+  <data name="Soplevel_is_required" xml:space="preserve">
+    <value>Soplevel là bắt buộc</value>
+  </data>
+  <data name="Soplevel_cannot_be_duplicated" xml:space="preserve">
+    <value>Soplevel không thể trùng lặp</value>
+  </data>
+  <data name="Sopid_cannot_be_duplicated" xml:space="preserve">
+    <value>Sopid không thể trùng lặp</value>
+  </data>
+  <data name="Machineid_cannot_be_duplicated" xml:space="preserve">
+    <value>Machineid không thể trùng lặp</value>
+  </data>
+  <data name="Number_of_machines_is_required_and_is_greater_than0" xml:space="preserve">
+    <value>Số lượng máy móc là bắt buộc và phải lớn hơn 0</value>
+  </data>
+  <data name="Skill_cannot_be_duplicated" xml:space="preserve">
+    <value>Kĩ năng không thể trùng lặp</value>
+  </data>
+  <data name="Number_of_skill_is_required_and_is_greater_than0" xml:space="preserve">
+    <value>Số lượng nhân công là bắt buộc và phải lớn hơn 0</value>
+  </data>
+  <data name="Accessories_cannot_be_duplicated" xml:space="preserve">
+    <value>Linh kiện không thể trùng lặp</value>
+  </data>
+  <data name="Number_of_accessories_is_required_and_is_greater_than0" xml:space="preserve">
+    <value>Số lượng linh kiện là bắt buộc và phải lớn hơn 0</value>
+  </data>
+  <data name="Condition_group_name_is_required" xml:space="preserve">
+    <value>Tên nhóm điều kiện là bắt buộc</value>
+  </data>
+  <data name="Number_is_required" xml:space="preserve">
+    <value>Số lượng là bắt buộc</value>
+  </data>
+  <data name="Number_cannot_be_duplicated" xml:space="preserve">
+    <value>Số lượng không thể trùng lặp</value>
+  </data>
+  <data name="Condition_group_type_malformed" xml:space="preserve">
+    <value>Loại nhóm điều kiện sai định dạng</value>
+  </data>
+  <data name="Only_2_conditions_in_a_group_of_conditions" xml:space="preserve">
+    <value>Chỉ có thể có 2 điều kiện trong một nhóm điều kiện</value>
+  </data>
+  <data name="A_group_of_conditions_must_choose_a_step" xml:space="preserve">
+    <value>Một nhóm điều kiện chỉ được chọn 1 bước</value>
+  </data>
+  <data name="Please_enter_value_when_selecting_step" xml:space="preserve">
+    <value>Hãy nhập giá trị khi chọn bước</value>
+  </data>
+  <data name="This_product_already_has_a_process" xml:space="preserve">
+    <value>Sản phẩm đã có một quy trình</value>
+  </data>
+  <data name="This_product_does_not_have_a_process_Please_add_procedure_before_creating_new_version" xml:space="preserve">
+    <value>Sản phẩm này chưa có quy trình. Hãy thêm quy trình trước khi tạo mới version</value>
+  </data>
+  <data name="Versionid_is_required" xml:space="preserve">
+    <value>Mã version là bắt buộc</value>
+  </data>
+  <data name="Invalid_identifier" xml:space="preserve">
+    <value>Mã định danh không hợp lệ</value>
+  </data>
+  <data name="Package_is_not_exist" xml:space="preserve">
+    <value>Mã định danh không tồn tại</value>
+  </data>
+  <data name="Print_stamp_failed" xml:space="preserve">
+    <value>In tem thất bại</value>
+  </data>
+  <data name="Packing_level_name_cannot_be_empty" xml:space="preserve">
+    <value>Tên cấp độ đóng gói không được để trống</value>
+  </data>
+  <data name="Packing_level_name_already_exists" xml:space="preserve">
+    <value>Tên cấp độ đóng gói đã tồn tại</value>
+  </data>
+  <data name="Packing_level_is_not_exist" xml:space="preserve">
+    <value>Cấp độ đóng gói không tồn tại</value>
+  </data>
+  <data name="The_packaging_of_the_product_already_exists" xml:space="preserve">
+    <value>Đã tồn tại quy cách đóng gói của sản phẩm đang ở trạng thái hoạt động, không thể thêm mới</value>
+  </data>
+  <data name="Packing_level_cannot_be_empty" xml:space="preserve">
+    <value>Cấp độ đóng gói không được để trống</value>
+  </data>
+  <data name="The_number_must_be_greater_than_0" xml:space="preserve">
+    <value>Số lượng phải lớn hơn 0</value>
+  </data>
+  <data name="The_products_packaging_does_not_exist" xml:space="preserve">
+    <value>Không tồn tại quy cách đóng gói của sản phẩm</value>
+  </data>
+  <data name="Packing_level_name_exceeds_50_characters" xml:space="preserve">
+    <value>Tên cấp độ đóng gói vượt quá 50 ký tự</value>
+  </data>
+  <data name="Description_exceeds_255_characters" xml:space="preserve">
+    <value>Mô tả vượt quá 255 ký tự</value>
+  </data>
+  <data name="Cant_repack_without_canceling_the_old_team" xml:space="preserve">
+    <value>Không thể đóng gói lại khi chưa hủy mã định danh cũ</value>
+  </data>
+  <data name="The_packing_level_related_to_the_packing_level_already_exists_the_level_cannot_be_changed" xml:space="preserve">
+    <value>Đã tồn tại quy cách đóng gói liên quan đến cấp độ đóng gói, không thể thay đổi cấp độ</value>
+  </data>
+  <data name="Identifier_is_not_exist" xml:space="preserve">
+    <value>Mã định danh không tồn tại</value>
+  </data>
+  <data name="Previously_canceled_identifier" xml:space="preserve">
+    <value>Mã định danh đã hủy trước đó</value>
+  </data>
+  <data name="Identifiers_that_have_been_destroyed_cannot_be_reprinted" xml:space="preserve">
+    <value>Mã định danh đã bị hủy không thể in lại</value>
+  </data>
+  <data name="Packing_specification_is_in_operation_cannot_be_edited" xml:space="preserve">
+    <value>Quy cách đóng gói đang được hoạt động, không thể chỉnh sửa</value>
+  </data>
+  <data name="It_is_not_possible_to_delete_this_packaging" xml:space="preserve">
+    <value>Không thế xóa quy cách đóng gói này</value>
+  </data>
+  <data name="Cant_delete_this_packing_level" xml:space="preserve">
+    <value>Không thế xóa cấp độ đóng gói này, vì đã tồn tại quy cách đóng gói</value>
+  </data>
+  <data name="The_product_does_not_have_a_working_packaging" xml:space="preserve">
+    <value>Sản phẩm không có quy cách đóng gói nào hoạt động</value>
+  </data>
+  <data name="There_are_no_finished_products_to_identify" xml:space="preserve">
+    <value>Không có thành phẩm nào để định danh</value>
+  </data>
+  <data name="The_total_number_of_stamped_identifiers_must_not_exceed_the_number_of_finished_products_contained_in_the_WO" xml:space="preserve">
+    <value>Tổng số mã định danh in tem không được vượt quá số lượng mã định danh cần phải in còn lại trong lệnh sản xuất</value>
+  </data>
+  <data name="Number_of_stamps_must_be_greater_than_1" xml:space="preserve">
+    <value>Số lượng tem phải lớn hơn 1</value>
+  </data>
+  <data name="The_number_of_products_in_a_shipment_must_be_greater_than_0" xml:space="preserve">
+    <value>Số lượng sản phẩm trong một lô hàng phải lớn hơn 0</value>
+  </data>
+  <data name="Workorder_does_not_exist" xml:space="preserve">
+    <value>Lệnh sản xuất không tồn tại</value>
+  </data>
+  <data name="Explain_why_reprinting_is_required" xml:space="preserve">
+    <value>Giải trình lý do in lại là bắt buộc</value>
+  </data>
+  <data name="The_number_must_be_greater_than_1" xml:space="preserve">
+    <value>Số lượng phải lớn hơn 1</value>
+  </data>
+  <data name="The_number_of_products_in_a_shipment_must_be_more_than_1" xml:space="preserve">
+    <value>Số lượng sản phẩm trong một lô hàng phải lớn hơn 1</value>
+  </data>
+  <data name="Checklist_code_cannot_be_empty" xml:space="preserve">
+    <value>Mã danh sách kiểm tra không được để trống</value>
+  </data>
+  <data name="Checklist_name_cannot_be_empty" xml:space="preserve">
+    <value>Tên danh sách kiểm tra không được để trống</value>
+  </data>
+  <data name="Stage_cannot_be_left_blank" xml:space="preserve">
+    <value>Công đoạn không được để trống</value>
+  </data>
+  <data name="Checkpoint_list_cannot_be_empty" xml:space="preserve">
+    <value>Danh sách điểm kiểm tra không được để trống</value>
+  </data>
+  <data name="Checkpoint_list_with_duplicate_element" xml:space="preserve">
+    <value>Danh sách điểm kiểm tra có phẩn tử trùng lặp</value>
+  </data>
+  <data name="Checklist_code_already_exists" xml:space="preserve">
+    <value>Mã danh sách kiểm tra đã tồn tại</value>
+  </data>
+  <data name="Checklist_code_is_not_exist" xml:space="preserve">
+    <value>Mã danh sách kiểm tra không tồn tại</value>
+  </data>
+  <data name="Workordercode_cannot_be_empty" xml:space="preserve">
+    <value>Mã lệnh sản xuất không được để trống</value>
+  </data>
+  <data name="Status_cannot_be_empty" xml:space="preserve">
+    <value>Trạng thái không được bỏ trống</value>
+  </data>
+  <data name="WO_is_not_exist_or_has_been_deleted" xml:space="preserve">
+    <value>WO không tồn tại hoặc đã bị xóa!</value>
+  </data>
+  <data name="Completed_and_closed_states_are_not_actionable" xml:space="preserve">
+    <value>Trạng thái hoàn thành và đóng không được hành động!</value>
+  </data>
+  <data name="coordination_required_real_quanity" xml:space="preserve">
+    <value>Hoàn thành yêu cầu nhập số lượng thực tế!</value>
+  </data>
+  <data name="Action_same_status" xml:space="preserve">
+    <value>Action trùng trạng thái!</value>
+  </data>
+  <data name="Unable_to_perform_action" xml:space="preserve">
+    <value>Không thể thực hiện action</value>
+  </data>
+  <data name="Incorrect_status" xml:space="preserve">
+    <value>Trạng thái không đúng</value>
+  </data>
+  <data name="No_production_center_with_corresponding_product_found" xml:space="preserve">
+    <value>Không tìm thấy trung tâm sản xuất với product tương ứng!</value>
+  </data>
+  <data name="Workorder_cannot_be_updated" xml:space="preserve">
+    <value>Lệnh sản xuất không thể cập nhật!</value>
+  </data>
+  <data name="The_product_does_not_exist_Bom" xml:space="preserve">
+    <value>Sản phẩm chưa tồn tại BOM</value>
+  </data>
+  <data name="BOM_has_no_version_in_use" xml:space="preserve">
+    <value>BOM không có verion đang sử dụng</value>
+  </data>
+  <data name="The_product_does_not_yet_have_a_process" xml:space="preserve">
+    <value>Sản phẩm chưa tồn tại quy trình</value>
+  </data>
+  <data name="Process_has_no_version_in_use" xml:space="preserve">
+    <value>Quy trình không có version nào đang sử dụng</value>
+  </data>
+  <data name="There_is_no_link_between_the_production_center_and_the_process" xml:space="preserve">
+    <value>Không có liên kết giữa trung tâm sản xuất và quy trình</value>
+  </data>
+  <data name="Checkpoint_code_already_exists" xml:space="preserve">
+    <value>Đã tồn tại mã điểm kiểm tra</value>
+  </data>
+  <data name="Checkpoint_code_does_not_exist" xml:space="preserve">
+    <value>Mã điểm kiểm tra không tồn tại</value>
+  </data>
+  <data name="Checkpoint_code_cannot_be_left_blank" xml:space="preserve">
+    <value>Mã điểm kiểm tra không được bỏ trống</value>
+  </data>
+  <data name="Checkpoint_name_cannot_be_left_blank" xml:space="preserve">
+    <value>Tên điểm kiểm tra không được bỏ trống</value>
+  </data>
+  <data name="Both_types_of_test_conditions_cannot_exist" xml:space="preserve">
+    <value>Không thể tồn tại cả hai loại điều kiện kiểm tra</value>
+  </data>
+  <data name="There_must_be_at_least_one_type_of_test_condition" xml:space="preserve">
+    <value>Phải có ít nhất một loại điều kiện kiểm tra</value>
+  </data>
+  <data name="Value_cannot_be_left_blank" xml:space="preserve">
+    <value>Giá trị không thể bỏ trống</value>
+  </data>
+  <data name="The_lower_bound_cannot_be_left_blank" xml:space="preserve">
+    <value>Giá trị cận dưới không thể bỏ trống</value>
+  </data>
+  <data name="The_upper_bound_cannot_be_left_blank" xml:space="preserve">
+    <value>Giá trị cận trên không thể bỏ trống</value>
+  </data>
+  <data name="The_upper_bound_should_not_be_less_than_the_lower_bound" xml:space="preserve">
+    <value>Giá trị cận trên không được nhỏ hơn hoặc bằng giá trị cận dưới</value>
+  </data>
+  <data name="Checkpoint_is_linked_to_a_checklist_cannot_be_deleted" xml:space="preserve">
+    <value>Điểm kiểm tra đang liên kết với một danh sách kiểm tra, không thể xóa</value>
+  </data>
+  <data name="Lot_number_cannot_be_left_blank" xml:space="preserve">
+    <value>Số lot không được để trống</value>
+  </data>
+  <data name="Work_order_cannot_be_left_blank" xml:space="preserve">
+    <value>Lệnh sản xuất không được để trống</value>
+  </data>
+  <data name="The_item_list_in_the_lot_cannot_be_empty" xml:space="preserve">
+    <value>Danh sách item trong lot không được để trống</value>
+  </data>
+  <data name="List_of_items_with_duplicate_elements" xml:space="preserve">
+    <value>Danh sách item có phẩn tử trùng lặp</value>
+  </data>
+  <data name="Lot_does_not_exist" xml:space="preserve">
+    <value>Lot không tồn tại</value>
+  </data>
+  <data name="Product_not_produced_by_work_order" xml:space="preserve">
+    <value>Sản phẩm không được sản xuất ra bởi lệnh sản xuất </value>
+  </data>
+  <data name="Itemcode_does_not_exist_in_lot" xml:space="preserve">
+    <value>Itemcode không tồn tại trong lot </value>
+  </data>
+  <data name="Error_code_does_not_exist" xml:space="preserve">
+    <value>Mã lỗi không tồn tại</value>
+  </data>
+  <data name="Search_time_cannot_be_empty" xml:space="preserve">
+    <value>Thời gian tìm kiếm không được để trống</value>
+  </data>
+  <data name="The_time_from_cannot_be_greater_than_the_time_of_arrival" xml:space="preserve">
+    <value>Thời gian từ không thể lớn hơn thời gian đến</value>
+  </data>
+  <data name="Search_time_cannot_be_more_than_1_year" xml:space="preserve">
+    <value>Thời gian tìm kiếm không thể lớn hơn 1 năm</value>
+  </data>
+  <data name="Must_enter_a_list_of_work_orders" xml:space="preserve">
+    <value>Phải nhập danh sách workorder</value>
+  </data>
+  <data name="Must_enter_work_center_list" xml:space="preserve">
+    <value>Phải nhập danh sách trung tâm sản xuất</value>
+  </data>
+  <data name="Request_does_not_exist" xml:space="preserve">
+    <value>Yêu cầu không tồn tại!</value>
+  </data>
+  <data name="Data_cannot_be_null" xml:space="preserve">
+    <value>Dữ liệu không được null</value>
+  </data>
+  <data name="Checklist_process_approve_for_already_exists" xml:space="preserve">
+    <value>Checklist trùng công đoạn và bước đã được kích hoạt</value>
+  </data>
+  <data name="checkpoint_can_delete" xml:space="preserve">
+    <value>Checkpoint hiện đang liên kết với một checklist nên không thể xóa</value>
+  </data>
+  <data name="product_can_not_delete" xml:space="preserve">
+    <value>Sản phẩm này đang không thể xóa</value>
+  </data>
+  <data name="work_unit_is_not_exist" xml:space="preserve">
+    <value>Không tồn tại đơn vị sản xuất</value>
+  </data>
+  <data name="code_is_not_null" xml:space="preserve">
+    <value>Mã NLĐ hoặc máy móc không được để trống</value>
+  </data>
+  <data name="the_product_process_does_not_exist" xml:space="preserve">
+    <value>Sản phẩm không tồn tại quy trình</value>
+  </data>
+  <data name="work_order_does_not_exist_productcode" xml:space="preserve">
+    <value>Lệnh sản xuất không tồn tại productcode</value>
+  </data>
+  <data name="work_order_is_not_null" xml:space="preserve">
+    <value>Lệnh sản xuất không được bỏ trống</value>
+  </data>
+  <data name="work_center_is_not_null" xml:space="preserve">
+    <value>Trung tâm sản xuất không được bỏ trống</value>
+  </data>
+  <data name="Item_does_not_exist_in_LOT" xml:space="preserve">
+    <value>Item không tồn tại trong LOT</value>
+  </data>
+  <data name="There_is_no_link_the_work_center_to_the_work_order_production_process" xml:space="preserve">
+    <value>Không tồn tại liên kết TTSX với quy trình sản xuất của lệnh sản xuất này</value>
+  </data>
+  <data name="Process_name_cannot_be_more_than_255_characters" xml:space="preserve">
+    <value>Tên quy trình không được quá 150 ký tự</value>
+  </data>
+  <data name="Level_name_cant_not_more_than_255_characters" xml:space="preserve">
+    <value>Tên cấp độ không được quá 255 ký tự</value>
+  </data>
+  <data name="Level_err" xml:space="preserve">
+    <value>Cấp độ </value>
+  </data>
+  <data name="QC_lot_code_already_exists" xml:space="preserve">
+    <value>Đã tồn tại mã lot QC</value>
+  </data>
+  <data name="Identifier_does_not_exist" xml:space="preserve">
+    <value>Mã định danh không tồn tại</value>
+  </data>
+  <data name="already_exists_in_another_lot" xml:space="preserve">
+    <value>đã tồn tại trong lot khác</value>
+  </data>
+  <data name="QC_lot_does_not_exist" xml:space="preserve">
+    <value>Lot QC không tồn tại</value>
+  </data>
+  <data name="This_link_cannot_be_removed_because_a_work_order_is_running" xml:space="preserve">
+    <value>Không thể xóa liên kết này vì đang có lệnh sản xuất đang chạy</value>
+  </data>
+  <data name="The_number_of_plots_to_be_taken_cannot_be_greater_than_the_amount_in_the_lot" xml:space="preserve">
+    <value>Số lô lấy không được lớn hơn số lượng trong lô</value>
+  </data>
+  <data name="SizeName_is_required" xml:space="preserve">
+    <value>Tên size không được để trống</value>
+  </data>
+  <data name="SizeCode_is_required" xml:space="preserve">
+    <value>Mã size không được để trống</value>
+  </data>
+  <data name="ColorCode_is_required" xml:space="preserve">
+    <value>Mã màu không được để trống</value>
+  </data>
+  <data name="ColorName_is_required" xml:space="preserve">
+    <value>Tên màu không được để trống</value>
+  </data>
+  <data name="ColorName_is_duplicate" xml:space="preserve">
+    <value>Tên màu đã bị trùng</value>
+  </data>
+  <data name="ColorCode_is_duplicate" xml:space="preserve">
+    <value>Mã màu đã bị trùng</value>
+  </data>
+  <data name="MarketCode_is_required" xml:space="preserve">
+    <value>Mã thị trường không được để trống</value>
+  </data>
+  <data name="MarketName_is_required" xml:space="preserve">
+    <value>Tên thị trường không được để trống</value>
+  </data>
+  <data name="MarketName_is_duplicate" xml:space="preserve">
+    <value>Tên thị trường đã bị trùng</value>
+  </data>
+  <data name="MarketCode_is_duplicate" xml:space="preserve">
+    <value>Mã thị trường đã bị trùng</value>
+  </data>
+  <data name="SeasonCode_is_required" xml:space="preserve">
+    <value>Mã mùa không được để trống</value>
+  </data>
+  <data name="SeasonName_is_required" xml:space="preserve">
+    <value>Tên mùa không được để trống</value>
+  </data>
+  <data name="SeasonName_is_duplicate" xml:space="preserve">
+    <value>Tên mùa đã bị trùng</value>
+  </data>
+  <data name="SeasonCode_is_duplicate" xml:space="preserve">
+    <value>Mã mùa đã bị trùng</value>
+  </data>
+  <data name="TimeSlotName_is_required" xml:space="preserve">
+    <value>Tên ca làm bắt buộc nhập</value>
+  </data>
+  <data name="TimeFrom_is_required" xml:space="preserve">
+    <value>Thời gian bắt đầu là bắt buộc</value>
+  </data>
+  <data name="TimeTo_is_required" xml:space="preserve">
+    <value>Thời gian kết thúc là bắt buộc</value>
+  </data>
+  <data name="TimeFrom_not_bigger_than_TimeTo" xml:space="preserve">
+    <value>Thời gian bắt đầu không được lớn hơn thời gian kết thúc</value>
+  </data>
+  <data name="TimeSlotName_is_exists" xml:space="preserve">
+    <value>Tên ca ghi nhận đã bị trùng</value>
+  </data>
+  <data name="TimeSlotCode_is_exists" xml:space="preserve">
+    <value>Ký hiệu đã bị trùng</value>
+  </data>
+  <data name="TimeSlot_is_not_exist" xml:space="preserve">
+    <value>Ca làm việc không tồn tại</value>
+  </data>
+  <data name="order_cannot_be_deleted" xml:space="preserve">
+    <value>Yêu cầu sản xuất đã được sử dụng để tạo lệnh, không thể xóa!</value>
+  </data>
+  <data name="The_list_of_workorder_has_duplicate_workordercode" xml:space="preserve">
+    <value>Danh sách lệnh sản xuất đang có mã lệnh trùng nhau</value>
+  </data>
+  <data name="Workordercode_" xml:space="preserve">
+    <value>Mã lệnh </value>
+  </data>
+  <data name="_already_in_the_system" xml:space="preserve">
+    <value> đã trong tại trong hệ thống</value>
+  </data>
+  <data name="The_production_requirement_quantity_cannot_be_less_than_the_quantity_in_the_work_order" xml:space="preserve">
+    <value>Số lượng yêu cầu sản xuất không thể nhỏ hơn số lượng trong lệnh sản xuất</value>
+  </data>
+  <data name="The_file_is_empty_of_data" xml:space="preserve">
+    <value>File trống dữ liệu</value>
+  </data>
+  <data name="Line_" xml:space="preserve">
+    <value>Dòng </value>
+  </data>
+  <data name="_The_date_of_shipment_is_in_wrong_date_format_review_the_data_in_column_J" xml:space="preserve">
+    <value>: Ngày xuất hàng sai định dạng ngày tháng, xem lại dữ liệu cột J</value>
+  </data>
+  <data name="No_production_type_exists" xml:space="preserve">
+    <value>Không tồn tại loại sản xuất</value>
+  </data>
+  <data name="_The_number_of_requests_is_in_the_wrong_positive_integer_format_review_the_data_in_column_I" xml:space="preserve">
+    <value>: Số lượng yêu cầu sai định dạng số nguyên dương, xem lại dữ liệu cột I</value>
+  </data>
+  <data name="_The_required_number_must_be_greater_than_0_review_column_I_data" xml:space="preserve">
+    <value>: Số lượng yêu cầu phải lớn hơn 0, xem lại dữ liệu cột I</value>
+  </data>
+  <data name="File_format_is_incorrect" xml:space="preserve">
+    <value>File định dạng không đúng</value>
+  </data>
+  <data name="_Production_requirement_code_is_blank_review_column_B_data" xml:space="preserve">
+    <value>: Mã yêu cầu sản xuất trống, xem lại dữ liệu cột B</value>
+  </data>
+  <data name="_Production_requirement_code_cannot_exceed_50_characters_review_column_B_data" xml:space="preserve">
+    <value>: Mã yêu cầu sản xuất không thể vượt quá 50 ký tự, xem lại dữ liệu cột B</value>
+  </data>
+  <data name="The_production_requirement_quantity_cannot_be_greater_than_the_quantity_in_the_order" xml:space="preserve">
+    <value>Số lượng yêu cầu sản xuất không thể lớn hơn số lượng trong đơn hàng</value>
+  </data>
+  <data name="Shipment_date_cannot_be_blank_if_production_status_is_" xml:space="preserve">
+    <value>Ngày xuất hàng không được để trống nếu trạng thái sản xuất là </value>
+  </data>
+  <data name="_The_shipping_order_code_cannot_exceed_255_characters_review_the_data_in_column_G" xml:space="preserve">
+    <value>: Mã đơn xuất hàng không thể vượt quá 255 ký tự, xem lại dữ liệu cột G</value>
+  </data>
+  <data name="_Production_order_code_contains_special_characters_or_spaces_review_column_B_data" xml:space="preserve">
+    <value>: Mã yêu cầu sản xuất chứa ký tự đặc biệt hoặc khoảng trống, xem lại dữ liệu cột B</value>
+  </data>
+  <data name="_Order_code_is_empty_review_column_C_data" xml:space="preserve">
+    <value>: Mã đơn hàng trống, xem lại dữ liệu cột C</value>
+  </data>
+  <data name="_Order_code_cannot_exceed_50_characters_review_column_C_data" xml:space="preserve">
+    <value>: Mã đơn hàng không thể vượt quá 50 ký tự, xem lại dữ liệu cột C</value>
+  </data>
+  <data name="_Internal_product_code_is_empty_review_column_D_data" xml:space="preserve">
+    <value>: Mã sản phẩm nội bộ trống, xem lại dữ liệu cột D</value>
+  </data>
+  <data name="_Internal_product_code_cannot_exceed_50_characters_review_column_D_data" xml:space="preserve">
+    <value>: Mã sản phẩm nội bộ không thể vượt quá 50 ký tự, xem lại dữ liệu cột D</value>
+  </data>
+  <data name="_Customer_product_code_cannot_exceed_50_characters_review_column_F_data" xml:space="preserve">
+    <value>: Mã sản phẩm khách hàng không thể vượt quá 50 ký tự, xem lại dữ liệu cột F</value>
+  </data>
+  <data name="_Production_type_is_empty_review_column_H_data" xml:space="preserve">
+    <value>: Loại sản xuất trống, xem lại dữ liệu cột H</value>
+  </data>
+  <data name="_Number_of_requests_is_empty_review_column_I_data" xml:space="preserve">
+    <value>: Số lượng yêu cầu trống, xem lại dữ liệu cột I</value>
+  </data>
+  <data name="_Empty_shipment_date_review_column_J_data" xml:space="preserve">
+    <value>: Ngày xuất hàng trống, xem lại dữ liệu cột J</value>
+  </data>
+  <data name="_and_line_" xml:space="preserve">
+    <value> và dòng </value>
+  </data>
+  <data name="_Duplicate_production_requirement_code_review_column_B_data" xml:space="preserve">
+    <value>: Trùng mã yêu cầu sản xuất, xem lại dữ liệu cột B</value>
+  </data>
+  <data name="_Requirement_code" xml:space="preserve">
+    <value>: Mã yêu cầu </value>
+  </data>
+  <data name="_already_exists_on_the_system_review_column_B_data" xml:space="preserve">
+    <value> đã tồn tại trên hệ thống, xem lại dữ liệu cột B</value>
+  </data>
+  <data name="Norm_code_cannot_be_left_blank" xml:space="preserve">
+    <value>Mã định mức không được để trống</value>
+  </data>
+  <data name="The_quota_code_cannot_exceed_50_characters" xml:space="preserve">
+    <value>Mã định mức không được vượt quá 50 ký tự</value>
+  </data>
+  <data name="Norm_name_cannot_be_empty" xml:space="preserve">
+    <value>Tên định mức không được để trống</value>
+  </data>
+  <data name="Norm_names_cannot_exceed_250_characters" xml:space="preserve">
+    <value>Tên định mức không được vượt quá 250 ký tự</value>
+  </data>
+  <data name="Effective_date_cannot_be_blank" xml:space="preserve">
+    <value>Ngày hiệu lực không được để trống</value>
+  </data>
+  <data name="Effective_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>Ngày hiệu lực sai định dạng ngày tháng</value>
+  </data>
+  <data name="Unit_price_type_cannot_be_left_blank" xml:space="preserve">
+    <value>Loại đơn giá không được để trống</value>
+  </data>
+  <data name="Technology_coefficient_cannot_be_left_blank" xml:space="preserve">
+    <value>Hệ số công nghệ không được để trống</value>
+  </data>
+  <data name="No_process_list_exists" xml:space="preserve">
+    <value>Không tồn tại danh sách quy trình</value>
+  </data>
+  <data name="A_detailed_description_list_does_not_exist" xml:space="preserve">
+    <value>Không tồn tại danh sách mô tả chi tiết</value>
+  </data>
+  <data name="No_detailed_description_of_" xml:space="preserve">
+    <value>Không tồn tại mô tả chi tiết của </value>
+  </data>
+  <data name="No_norms_found_on_the_system" xml:space="preserve">
+    <value>Không tìm thấy định mức trên hệ thống</value>
+  </data>
+  <data name="Norm_information_cannot_be_edited" xml:space="preserve">
+    <value>Chỉ có thể sửa định mức ở trạng thái "Tạo mới" hoặc "Từ chối"</value>
+  </data>
+  <data name="Rating_information_cannot_be_deleted" xml:space="preserve">
+    <value>Chỉ có thể xóa định mức ở trạng thái "Tạo mới"</value>
+  </data>
+  <data name="Product_code_cannot_be_blank" xml:space="preserve">
+    <value>Mã sản phẩm không được để trống</value>
+  </data>
+  <data name="Product_code_cannot_exceed_50_characters" xml:space="preserve">
+    <value>Mã sản phẩm không thể dài hơn 50 ký tự</value>
+  </data>
+  <data name="Workordercode_cannot_be_left_blank" xml:space="preserve">
+    <value>Mã lệnh sản xuất không thể bỏ trống</value>
+  </data>
+  <data name="Workorder_document_number_cannot_be_left_blank" xml:space="preserve">
+    <value>Số lệnh sản xuất không thể bỏ trống</value>
+  </data>
+  <data name="Workordercode_cannot_exceed_50_characters" xml:space="preserve">
+    <value>Mã lệnh sản xuất không thể vượt quá 150 ký tự</value>
+  </data>
+  <data name="Work_order_name_cannot_be_left_blank" xml:space="preserve">
+    <value>Tên lệnh sản xuất không thể bỏ trống</value>
+  </data>
+  <data name="Work_order_name_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Tên lệnh sản xuất không thể vượt quá 255 ký tự</value>
+  </data>
+  <data name="The_start_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>Ngày bắt đầu sai định dạng ngày tháng</value>
+  </data>
+  <data name="The_end_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>Ngày kết thúc sai định dạng ngày tháng</value>
+  </data>
+  <data name="Workorderorder_bases_cannot_exceed_500_characters" xml:space="preserve">
+    <value>Căn cứ lệnh sản xuất không thể vượt quá 500 ký tự</value>
+  </data>
+  <data name="Note_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Ghi chú không thể vượt quá 1000 ký tự</value>
+  </data>
+  <data name="The_assignment_list_does_not_have_any_records" xml:space="preserve">
+    <value>Danh sách giao việc không tồn tại bản ghi nào</value>
+  </data>
+  <data name="The_work_order_code_already_exists_in_the_system" xml:space="preserve">
+    <value>Mã lệnh sản xuất đã tồn tại trong hệ thống</value>
+  </data>
+  <data name="The_work_order_code_does_not_exist_in_the_system" xml:space="preserve">
+    <value>Mã lệnh sản xuất không tồn tại trong hệ thống</value>
+  </data>
+  <data name="The_work_order_code_overlaps_with_other_production_order_codes_that_exist_in_the_system" xml:space="preserve">
+    <value>Mã lệnh sản xuất trùng với mã lệnh sản xuất khác tồn tại trong hệ thống</value>
+  </data>
+  <data name="Work_order_with_a_status_of_Initialize_can_only_be_edited" xml:space="preserve">
+    <value>Chỉ có thể sửa lệnh sản xuất có trạng thái là "Khởi tạo"</value>
+  </data>
+  <data name="Work_order_with_an_approval_status_of_Initialize_can_only_be_edited" xml:space="preserve">
+    <value>Chỉ có thể sửa lệnh sản xuất có trạng thái phê duyệt là "Khởi tạo" hoặc "Từ chối" hoặc "Lưu tạm"</value>
+  </data>
+  <data name="Work_order_with_an_approval_status_of_Initialize_can_only_be_deleted" xml:space="preserve">
+    <value>Chỉ có thể xóa lệnh sản xuất có trạng thái phê duyệt là "Khởi tạo"</value>
+  </data>
+  <data name="Step_name_cannot_be_empty" xml:space="preserve">
+    <value>Tên bước không được để trống</value>
+  </data>
+  <data name="Step_name_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Tên bước không được vượt quá 255 kí tự</value>
+  </data>
+  <data name="The_quantity_cannot_be_blank_and_must_be_greater_than_0" xml:space="preserve">
+    <value>Số lượng không thể để trống và phải lớn hơn 0</value>
+  </data>
+  <data name="Notes_cannot_exceed_255_characters" xml:space="preserve">
+    <value>Ghi chú không thể vượt quá 255 kí tự</value>
+  </data>
+  <data name="Product_code_is_blank" xml:space="preserve">
+    <value>Mã sản phẩm đang bị bỏ trống</value>
+  </data>
+  <data name="The_quantity_cannot_be_left_blank_and_must_be_greater_than_0" xml:space="preserve">
+    <value>Số lượng không thể bỏ trống và phải lớn hơn 0</value>
+  </data>
+  <data name="The_task_name_cannot_be_longer_than_225_characters" xml:space="preserve">
+    <value>Tên nhiệm vụ không thể dài hơn 225 ký tự</value>
+  </data>
+  <data name="The_execution_unit_cannot_be_left_blank" xml:space="preserve">
+    <value>Đơn vị thực hiện không thể để trống</value>
+  </data>
+  <data name="Start_date_cannot_be_blank" xml:space="preserve">
+    <value>Ngày bắt đầu không thể để trống</value>
+  </data>
+  <data name="End_date_cannot_be_blank" xml:space="preserve">
+    <value>Ngày kết thúc không thể để trống</value>
+  </data>
+  <data name="End_date_is_in_wrong_date_format" xml:space="preserve">
+    <value>Ngày kết thúc sai định dạng ngày tháng</value>
+  </data>
+  <data name="It_is_not_possible_to_delete_bom_with_work_order" xml:space="preserve">
+    <value>Không thể xóa định mức liên kết với lệnh sản xuất</value>
+  </data>
+  <data name="The_effective_date_cannot_be_greater_than_the_effective_date_of_the_latest_version" xml:space="preserve">
+    <value>Ngày hiệu lực không thể nhỏ hơn hoặc bằng ngày hiệu lực của phiên bản mới nhất</value>
+  </data>
+  <data name="BomJobSetting_CreateOrUpdate_Error_Required" xml:space="preserve">
+    <value>Vui lòng nhập các thông tin bắt buộc.</value>
+  </data>
+  <data name="BomJobSetting_CreateOrUpdate_Error_Version" xml:space="preserve">
+    <value>Phiên bản mã thiết lập đã bị trùng, phiên bản mới sẽ được cập nhật. Vui lòng lưu lại với phiên bản mới!</value>
+  </data>
+  <data name="BomJobSetting_Delete_Error_Status" xml:space="preserve">
+    <value>Chỉ được xóa khi thiết lập ở trạng thái khởi tạo</value>
+  </data>
+  <data name="BomJobSetting_CreateOrUpdate_Error_EffectiveDateNotRangeBom" xml:space="preserve">
+    <value>Ngày hiệu lực của thiết lập phải nằm trong phạm vị Ngày Hiệu Lực của định mức</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Dữ liệu không thể tìm thấy trên hệ thống</value>
+  </data>
+  <data name="Record_Approval_NotFound_User" xml:space="preserve">
+    <value>Bạn không có quyền phê duyệt thông tin ghi nhận.</value>
+  </data>
+  <data name="Record_Approval_Required_ReasonNote" xml:space="preserve">
+    <value>Vui lòng nhập lý do khi từ chối ghi nhận.</value>
+  </data>
+  <data name="Unable_to_create_additional_browsers" xml:space="preserve">
+    <value>Không thể tạo thêm trình phê duyệt!</value>
+  </data>
+  <data name="Bom_do_not_exist" xml:space="preserve">
+    <value>Không tồn tại định mức!</value>
+  </data>
+  <data name="The_quota_approval_status_must_be_create_or_deny" xml:space="preserve">
+    <value>Trạng thái phê duyệt định mức phải là tạo mới hoặc từ chối!</value>
+  </data>
+  <data name="Assignment_setting_does_not_exist" xml:space="preserve">
+    <value>Thiết lập giao việc không tồn tại</value>
+  </data>
+  <data name="The_approval_form_and_the_process_do_not_match" xml:space="preserve">
+    <value>Phiếu phê duyệt và quy trình không trùng khớp!</value>
+  </data>
+  <data name="Approval_document_does_not_exist" xml:space="preserve">
+    <value>Tài liệu phê duyệt không tồn tại!</value>
+  </data>
+  <data name="No_job_assignment_information_exists" xml:space="preserve">
+    <value>Không tồn tại thông tin giao việc</value>
+  </data>
+  <data name="Menu_does_not_exist_or_is_not_an_action_menu" xml:space="preserve">
+    <value>Menu_does_not_exist hoặc không phải menu action</value>
+  </data>
+  <data name="Action_does_not_exist" xml:space="preserve">
+    <value>Action không tồn tại</value>
+  </data>
+  <data name="Menu_does_not_exist" xml:space="preserve">
+    <value>Menu không tồn tại</value>
+  </data>
+  <data name="The_menu_has_an_existing_submenu" xml:space="preserve">
+    <value>Menu đang tồn tại menu con</value>
+  </data>
+  <data name="Menu_has_been_used_for_decentralization" xml:space="preserve">
+    <value>Menu đã được sử dụng để phân quyền</value>
+  </data>
+  <data name="No_rights_exist" xml:space="preserve">
+    <value>Không tồn tại quyền</value>
+  </data>
+  <data name="No_user_exists_in_the_system" xml:space="preserve">
+    <value>Không tồn tại người dùng trong hệ thống!</value>
+  </data>
+  <data name="No_rights_exist_on_the_system" xml:space="preserve">
+    <value>Không tồn tại quyền trên hệ thống</value>
+  </data>
+  <data name="Record_Required_Integration_Error_Input_RangeTime" xml:space="preserve">
+    <value>Thời gian tìm kiếm không đúng, thời gian từ phải nhỏ hơn thời gian đên và khoảng thời gian tìm kiếm không vượt quá 1 tháng.</value>
+  </data>
+  <data name="BomJobSetting_CreateOrUpdate_Error_EffectiveDate" xml:space="preserve">
+    <value>Ngày hiệu lực phải lớn hơn ngày hiệu lực của phiên bản cũ</value>
+  </data>
+  <data name="label_all" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="label_assign_command" xml:space="preserve">
+    <value>Phiếu giao việc</value>
+  </data>
+  <data name="label_order_command" xml:space="preserve">
+    <value>Phiếu đặt làm</value>
+  </data>
+  <data name="label_production_command" xml:space="preserve">
+    <value>Lệnh sản xuất</value>
+  </data>
+  <data name="label_type_display_product" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="label_type_display_stage_code" xml:space="preserve">
+    <value>Chặng sản xuất</value>
+  </data>
+  <data name="label_type_display_step" xml:space="preserve">
+    <value>Bước sản xuất</value>
+  </data>
+  <data name="label_type_product_main" xml:space="preserve">
+    <value>Sản phẩm chính</value>
+  </data>
+  <data name="label_type_product_support" xml:space="preserve">
+    <value>Công việc hỗ trợ</value>
+  </data>
+  <data name="label_work_private" xml:space="preserve">
+    <value>Làm riêng</value>
+  </data>
+  <data name="label_work_public" xml:space="preserve">
+    <value>Làm chung</value>
+  </data>
+  <data name="label_default" xml:space="preserve">
+    <value>Mặc định</value>
+  </data>
+  <data name="label_line_default" xml:space="preserve">
+    <value>Dây chuyền mặc định</value>
+  </data>
+</root>

@@ -1,0 +1,70 @@
+project:
+  namespace: "{Database.Name}"
+  directory: .\
+database:
+  provider: PostgreSQL
+  connectionString: Server=172.31.2.121; Port=5432; Database=ManageDepartment; User Id=postgres; Password=Evotek@1234
+  tableNaming: Singular
+  tables: []
+  schemas: [public, warehouse, report]
+  exclude: []
+data:
+  context:
+    name: SopContext
+    baseClass: DbContext
+    propertyNaming: Plural
+    namespace: Infrastructure.DataContext
+    directory: ..\Infrastructure\DataContext
+    document: false
+  entity:
+    entityNaming: Singular
+    relationshipNaming: Plural
+    prefixWithSchemaName: false
+    namespace: Domain.Entities
+    directory: ..\Domain\Entities\{Table.Schema}
+    document: false
+  mapping:
+    namespace: Infrastructure.DataContext.Mapping
+    directory: ..\Infrastructure\DataContext\Mapping
+    document: false
+  query:
+    generate: true
+    indexPrefix: By
+    uniquePrefix: GetBy
+    namespace: Infrastructure.DataContext.Queries
+    directory: ..\Infrastructure\DataContext\Queries
+    document: false
+model:
+  shared:
+    namespace: "{Project.Namespace}.Domain.Models"
+    directory: '{Project.Directory}\Domain\Models'
+  read:
+    generate: false
+    name: "{Entity.Name}ReadModel"
+    document: false
+  create:
+    generate: false
+    name: "{Entity.Name}CreateModel"
+    document: false
+  update:
+    generate: false
+    name: "{Entity.Name}UpdateModel"
+    document: false
+  mapper:
+    generate: false
+    name: "{Entity.Name}Profile"
+    baseClass: AutoMapper.Profile
+    namespace: "{Project.Namespace}.Domain.Mapping"
+    directory: '{Project.Directory}\Domain\Mapping'
+    document: false
+  validator:
+    generate: false
+    name: "{Model.Name}Validator"
+    baseClass: AbstractValidator<{Model.Name}>
+    namespace: "{Project.Namespace}.Domain.Validation"
+    directory: '{Project.Directory}\Domain\Validation'
+    document: false
+script:
+  context: []
+  entity: []
+  model: []

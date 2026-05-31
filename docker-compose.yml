@@ -1,0 +1,221 @@
+version: "3.8"
+
+# ============================================================
+# Microservice Architecture — Full Stack
+# ============================================================
+# Flow: React_App → AuthServer (SSO) → Gateway (YARP) → Services
+#
+# Chạy lần đầu:
+#   docker-compose up -d --build
+#
+# Chạy lại (đã có image):
+#   docker-compose up -d
+#
+# Xem log:
+#   docker-compose logs -f
+#   docker-compose logs -f gateway
+#
+# Dừng:
+#   docker-compose down
+#   docker-compose down -v   (xóa cả volume upload)
+#
+# Cấu hình DB: tạo file .env (copy từ .env.example) và chỉnh connection string
+# ============================================================
+
+networks:
+  microservice-network:
+    name: microservice-network
+
+services:
+
+  # ─────────────────────────────────────────────────────────
+  # 1. CONSUL — Service Discovery & Registry
+  #    Go binary (HashiCorp), không phải .NET
+  #    UI: http://localhost:8500/ui
+  # ─────────────────────────────────────────────────────────
+  consul:
+    image: hashicorp/consul:1.18
+    container_name: consul
+    restart: unless-stopped
+    ports:
+      - "8500:8500"
+      - "8600:8600/udp"
+    command: "agent -server -bootstrap-expect=1 -ui -client=0.0.0.0"
+    networks: [microservice-network]
+    healthcheck:
+      test: ["CMD", "consul", "members"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─────────────────────────────────────────────────────────
+  # 2. AUTH SERVER — OpenIddict SSO
+  #    Authorization Code Flow + PKCE
+  #    http://localhost:5010
+  #    Demo: admin/admin123, user/user123
+  # ─────────────────────────────────────────────────────────
+  auth-server:
+    build:
+      context: ./AuthServer
+      dockerfile: Dockerfile
+    container_name: auth-server
+    restart: unless-stopped
+    ports:
+      - "5010:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      # Issuer trong JWT = URL public (browser)
+      - Auth__Issuer=http://localhost:5010
+    networks: [microservice-network]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/.well-known/openid-configuration > /dev/null || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  # ─────────────────────────────────────────────────────────
+  # 3. GATEWAY — YARP Reverse Proxy
+  #    Cổng duy nhất cho traffic từ bên ngoài
+  #    http://localhost:5050
+  #    /api/base/*   → service-base:8080
+  #    /api/upload/* → service-upload:8080
+  #    /auth/*       → auth-server:8080
+  #
+  #    Service ↔ Service: KHÔNG đi qua Gateway (Refit gọi trực tiếp)
+  # ─────────────────────────────────────────────────────────
+  gateway:
+    build:
+      context: ./Gateway
+      dockerfile: Dockerfile
+    container_name: gateway
+    restart: unless-stopped
+    ports:
+      - "5050:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      # JWT verify — trỏ vào auth-server trong cùng Docker network
+      - Auth__Authority=http://auth-server:8080
+      # Service Discovery cho Gateway (route đến upstream)
+      - ServiceDiscovery__UseConsul=false
+      - ServiceDiscovery__ConsulAddress=http://consul:8500
+      # Địa chỉ upstream (dùng tên service trong Docker network)
+      - ReverseProxy__Clusters__service-base__Destinations__primary__Address=http://service-base:8080
+      - ReverseProxy__Clusters__service-upload__Destinations__primary__Address=http://service-upload:8080
+      - ReverseProxy__Clusters__auth-server__Destinations__primary__Address=http://auth-server:8080
+    depends_on:
+      auth-server:
+        condition: service_healthy
+    networks: [microservice-network]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health > /dev/null || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  # ─────────────────────────────────────────────────────────
+  # 4. SERVICE BASE — Core Business API
+  #    Clean Architecture: Api/Application/Domain/Infrastructure
+  #    Swagger: http://localhost:5000/swagger
+  #    Qua Gateway: http://localhost:5050/api/base/...
+  #
+  #    Refit → Service_Upload: TRỰC TIẾP (http://service-upload:8080)
+  # ─────────────────────────────────────────────────────────
+  service-base:
+    build:
+      context: ./Service_Base
+      dockerfile: Dockerfile
+    container_name: service-base
+    restart: unless-stopped
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      # ── PostgreSQL ──────────────────────────────────────────
+      - Appsettings__DefaultConnection=${SERVICE_BASE_DB:-Server=host.docker.internal;Port=5432;Database=ManageDepartment;User Id=postgres;Password=123456aA@;}
+      # ── JWT OpenIddict (RS256) — Authority nội bộ Docker, iss = localhost:5010 ──
+      - JsonWebTokenKeys__Authority=http://auth-server:8080
+      - JsonWebTokenKeys__ValidIssuers__0=http://localhost:5010
+      - JsonWebTokenKeys__ValidIssuers__1=http://localhost:5010/
+      - JsonWebTokenKeys__ValidateIssuer=true
+      - JsonWebTokenKeys__ValidateAudience=false
+      - JsonWebTokenKeys__ValidateLifetime=true
+      # ── Refit: gọi thẳng Service_Upload (không qua Gateway) ─
+      - ServiceDiscovery__UseConsul=false
+      - ServiceAddresses__ServiceUpload=http://service-upload:8080
+      # ── Misc ────────────────────────────────────────────────
+      - Appsettings__isCheckPermission=false
+      - ElasticConfiguration__Uri=${ELASTIC_URI:-http://localhost:9200}
+    networks: [microservice-network]
+
+  # ─────────────────────────────────────────────────────────
+  # 5. SERVICE UPLOAD — File Upload/Download
+  #    Swagger: http://localhost:5001/swagger
+  #    Qua Gateway: http://localhost:5050/api/upload/...
+  #
+  #    Refit → Service_Base: TRỰC TIẾP (http://service-base:8080)
+  #    Files lưu tại volume: microservice_uploads
+  # ─────────────────────────────────────────────────────────
+  service-upload:
+    build:
+      context: ./Service_Upload
+      dockerfile: Dockerfile
+    container_name: service-upload
+    restart: unless-stopped
+    ports:
+      - "5001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - Appsettings__DefaultConnection=${SERVICE_UPLOAD_DB:-Server=host.docker.internal;Port=5432;Database=ManageDepartment;User Id=postgres;Password=123456aA@;}
+      - JsonWebTokenKeys__Authority=http://auth-server:8080
+      - JsonWebTokenKeys__ValidIssuers__0=http://localhost:5010
+      - JsonWebTokenKeys__ValidIssuers__1=http://localhost:5010/
+      - JsonWebTokenKeys__ValidateIssuer=true
+      - JsonWebTokenKeys__ValidateAudience=false
+      - JsonWebTokenKeys__ValidateLifetime=true
+      # ── Refit: gọi thẳng Service_Base (không qua Gateway) ───
+      - ServiceDiscovery__UseConsul=false
+      - ServiceAddresses__ServiceBase=http://service-base:8080
+      # ── Misc ────────────────────────────────────────────────
+      - Appsettings__isCheckPermission=false
+      - ElasticConfiguration__Uri=${ELASTIC_URI:-http://localhost:9200}
+    volumes:
+      - upload_data:/app/wwwroot/uploads
+    networks: [microservice-network]
+
+  # ─────────────────────────────────────────────────────────
+  # 6. REACT APP — Frontend SPA
+  #    Vite build → Nginx serve
+  #    http://localhost:3000
+  #
+  #    QUAN TRỌNG: VITE_* là build-time env (trình duyệt truy cập)
+  #    → Dùng localhost:xxxx (không phải tên service Docker)
+  # ─────────────────────────────────────────────────────────
+  react-app:
+    build:
+      context: ./React_App
+      dockerfile: Dockerfile
+      args:
+        # Địa chỉ trình duyệt truy cập (không phải Docker internal)
+        VITE_AUTH_AUTHORITY: http://localhost:5010
+        VITE_CLIENT_ID: react-app
+        VITE_REDIRECT_URI: http://localhost:3000/callback
+        VITE_POST_LOGOUT_URI: http://localhost:3000
+        VITE_GATEWAY_URL: http://localhost:5050
+    container_name: react-app
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      gateway:
+        condition: service_healthy
+    networks: [microservice-network]
+
+volumes:
+  upload_data:
+    name: microservice_uploads

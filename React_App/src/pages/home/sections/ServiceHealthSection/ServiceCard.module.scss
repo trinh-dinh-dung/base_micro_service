@@ -1,0 +1,124 @@
+@use '../../../../shared/styles/variables' as *;
+
+.card {
+  background: $card-bg;
+  border-radius: $radius;
+  padding: 24px;
+  box-shadow: $shadow;
+  border: 1px solid $border;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.desc {
+  font-size: 13px;
+  color: $text-muted;
+  margin-top: 4px;
+}
+
+.port {
+  font-size: 12px;
+  font-family: monospace;
+  background: $bg;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: $primary;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.statusDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.status-idle {
+  background: $status-idle;
+}
+
+.status-loading {
+  background: $status-loading;
+}
+
+.status-ok {
+  background: $status-ok;
+}
+
+.status-error {
+  background: $status-error;
+}
+
+.actions {
+  margin-bottom: 12px;
+}
+
+.btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.primary {
+  background: $primary;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background: $primary-dark;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  background: $bg;
+  color: $text;
+  border: 2px solid $border;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+}
+
+.response {
+  background: $code-bg;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+  overflow: auto;
+  max-height: 160px;
+
+  pre {
+    color: #94a3b8;
+    font-family: monospace;
+  }
+}
+
+.responseOk pre {
+  color: #86efac;
+}
+
+.responseError pre {
+  color: #fca5a5;
+}
