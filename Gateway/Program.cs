@@ -1,3 +1,4 @@
+using Elastic.Apm.NetCoreAll;
 using Gateway.ServiceDiscovery;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Yarp.ReverseProxy.Configuration;
@@ -36,11 +37,27 @@ builder.Services
     .AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
+// ── Elastic APM ──
+builder.Services.AddAllElasticApm();
+
 var app = builder.Build();
 
 app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Middleware: log traceparent để trace request từ FE qua Gateway đến service
+app.Use(async (context, next) =>
+{
+    var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+    var traceparent = context.Request.Headers["traceparent"].FirstOrDefault();
+    if (!string.IsNullOrEmpty(traceparent))
+    {
+        logger.LogInformation("[Gateway] {Method} {Path} traceparent={Traceparent}",
+            context.Request.Method, context.Request.Path, traceparent);
+    }
+    await next();
+});
 
 // Health check endpoint — dùng cho Docker healthcheck và load balancer
 app.MapHealthChecks("/health");

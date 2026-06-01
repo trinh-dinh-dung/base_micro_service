@@ -26,7 +26,7 @@ public class FileBridgeController : BaseController
 
     /// <summary>
     /// Đính kèm file vào entity — nghiệp vụ đầy đủ (validate + upload + lưu metadata).
-    /// POST /api/FileBridge/attach?entityType=Department&entityId=abc123
+    /// POST /api/FileBridge/attach?entityType=Department&amp;entityId=abc123
     /// </summary>
     [HttpPost("attach")]
     [AllowAnonymous]
@@ -54,7 +54,7 @@ public class FileBridgeController : BaseController
 
     /// <summary>
     /// Lấy file của entity.
-    /// GET /api/FileBridge/files?entityType=Department&entityId=abc123
+    /// GET /api/FileBridge/files?entityType=Department&amp;entityId=abc123
     /// </summary>
     [HttpGet("files")]
     [AllowAnonymous]

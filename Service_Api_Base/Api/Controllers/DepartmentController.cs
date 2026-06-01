@@ -56,7 +56,9 @@ namespace Api.Controllers
         [HttpGet("get-list-department-by-parent-id")]
         public async Task<IActionResult> GetListDepartmentByParentId(Guid? parentId)
         {
+            _logger.LogInformation("GetListDepartmentByParentId called. parentId={ParentId}", parentId);
             var response = await _departmentService.GetListDepartmentByParentId(parentId);
+            _logger.LogInformation("GetListDepartmentByParentId result: {@Response}", response);
             return Ok(new ResponseApi(response, true));
         }
     }

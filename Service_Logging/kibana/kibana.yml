@@ -1,0 +1,9 @@
+server.host: "0.0.0.0"
+
+# APM indices — đọc từ legacy format của APM Server 7.17
+xpack.apm_data_access.indices.transaction: "apm-*"
+xpack.apm_data_access.indices.span: "apm-*"
+xpack.apm_data_access.indices.error: "apm-*"
+xpack.apm_data_access.indices.metric: "apm-*"
+xpack.apm_data_access.indices.sourcemap: "apm-*"
+xpack.apm_data_access.indices.onboarding: "apm-*"

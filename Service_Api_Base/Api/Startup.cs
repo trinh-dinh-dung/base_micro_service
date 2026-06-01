@@ -28,6 +28,8 @@ using System.Reflection;
 using System.IO;
 using Microsoft.AspNetCore.ResponseCompression;
 using Api.Base.JWT;
+using Elastic.Apm.NetCoreAll;
+using Serilog;
 
 namespace Evo.Mes.Template.Api
 {
@@ -71,6 +73,9 @@ namespace Evo.Mes.Template.Api
             services.AddInfrastructure();
             services.AddApplicationServices();
             services.AddRefitHttpClients(Configuration);
+
+            // ── Elastic APM ──
+            services.AddAllElasticApm();
 
             services.AddDbContext<SopContext>((serviceProvider, dbContextBuilder) =>
             {
@@ -177,6 +182,8 @@ namespace Evo.Mes.Template.Api
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             var configSettings = Configuration.GetSection("Appsettings").Get<Appsettings>();
+
+            app.UseSerilogRequestLogging();
 
             if (env.IsDevelopment())
             {

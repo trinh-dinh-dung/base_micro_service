@@ -21,7 +21,7 @@ namespace Evo.Mes.Template.Api
              .ConfigureAppConfiguration((HostBuilderContext hostBuilderContext, IConfigurationBuilder config) =>
              {
                  var env = hostBuilderContext.HostingEnvironment;
-                 config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true);
+                 config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
                  config.AddEnvironmentVariables();
              })
             .ConfigureWebHostDefaults(webBuilder =>
@@ -37,7 +37,7 @@ namespace Evo.Mes.Template.Api
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile(
                     $"appsettings.{environment}.json",
-                    optional: false)
+                    optional: true)
                 .AddEnvironmentVariables()
                 .Build();
 
