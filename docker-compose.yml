@@ -67,6 +67,9 @@ services:
       - ASPNETCORE_URLS=http://+:8080
       # Issuer trong JWT = URL public (browser)
       - Auth__Issuer=http://localhost:5010
+      # Không hardcode credential: cấu hình qua .env hoặc secret store
+      - Auth__Users__admin=${AUTH_ADMIN_PASSWORD:-}
+      - Auth__Users__user=${AUTH_USER_PASSWORD:-}
     networks: [microservice-network]
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080/.well-known/openid-configuration > /dev/null || exit 1"]
@@ -96,8 +99,21 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-      # JWT verify — trỏ vào auth-server trong cùng Docker network
-      - Auth__Authority=http://auth-server:8080
+      # JWT verify mode: internal shared-secret (không dùng OIDC)
+      - Auth__Authority=
+      - Auth__UseExternalValidation=true
+      - Auth__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://auth.pvi.com.vn/api/Authentication/ValidAccessToken}
+      - Auth__SsoTokenUrl=${VITE_API_TOKEN_URL:-https://authtest.pvi.com.vn}
+      - Auth__SsoCallbackUrl=${VITE_CALLBACK_URL:-http://localhost:5173/login-callback}
+      - Auth__SsoAppId=${VITE_APP_ID:-react-app}
+      - Auth__SsoPrivateKey=${SSO_PRIVATE_KEY:-}
+      - Auth__JwtSecret=${JWT_SECRET:-44k63553-15C1-5769-9133-EFAF45A9B705}
+      - Auth__ValidateIssuerSigningKey=true
+      - Auth__ValidateIssuer=false
+      - Auth__ValidateAudience=false
+      - Auth__RequireExpirationTime=true
+      - Auth__ValidateLifetime=true
+      - Auth__ClockSkewMinutes=5
       # Service Discovery cho Gateway (route đến upstream)
       - ServiceDiscovery__UseConsul=false
       - ServiceDiscovery__ConsulAddress=http://consul:8500
@@ -144,10 +160,11 @@ services:
       # ── SQL Server ──────────────────────────────────────────
       - Appsettings__DefaultConnection=${SERVICE_BASE_DB:-Server=192.168.252.158,1433;Database=PIAS_AUDIT_LOGS;User Id=sa;Password=s@123456;TrustServerCertificate=True;}
       # ── JWT OpenIddict (RS256) — Authority nội bộ Docker, iss = localhost:5010 ──
-      - JsonWebTokenKeys__Authority=http://auth-server:8080
-      - JsonWebTokenKeys__ValidIssuers__0=http://localhost:5010
-      - JsonWebTokenKeys__ValidIssuers__1=http://localhost:5010/
-      - JsonWebTokenKeys__ValidateIssuer=true
+      - JsonWebTokenKeys__Authority=
+      - JsonWebTokenKeys__UseExternalValidation=true
+      - JsonWebTokenKeys__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://auth.pvi.com.vn/api/Authentication/ValidAccessToken}
+      - JsonWebTokenKeys__ValidateIssuerSigningKey=false
+      - JsonWebTokenKeys__ValidateIssuer=false
       - JsonWebTokenKeys__ValidateAudience=false
       - JsonWebTokenKeys__ValidateLifetime=true
       # ── Refit: gọi thẳng Service_Upload (không qua Gateway) ─
@@ -184,10 +201,11 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
       - Appsettings__DefaultConnection=${SERVICE_UPLOAD_DB:-Server=host.docker.internal;Port=5432;Database=ManageDepartment;User Id=postgres;Password=123456aA@;}
-      - JsonWebTokenKeys__Authority=http://auth-server:8080
-      - JsonWebTokenKeys__ValidIssuers__0=http://localhost:5010
-      - JsonWebTokenKeys__ValidIssuers__1=http://localhost:5010/
-      - JsonWebTokenKeys__ValidateIssuer=true
+      - JsonWebTokenKeys__Authority=
+      - JsonWebTokenKeys__UseExternalValidation=true
+      - JsonWebTokenKeys__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://auth.pvi.com.vn/api/Authentication/ValidAccessToken}
+      - JsonWebTokenKeys__ValidateIssuerSigningKey=false
+      - JsonWebTokenKeys__ValidateIssuer=false
       - JsonWebTokenKeys__ValidateAudience=false
       - JsonWebTokenKeys__ValidateLifetime=true
       # ── Refit: gọi thẳng Service_Base (không qua Gateway) ───
@@ -213,16 +231,18 @@ services:
       context: ./React_App
       dockerfile: Dockerfile
       args:
-        # Địa chỉ trình duyệt truy cập (không phải Docker internal)
-        VITE_AUTH_AUTHORITY: http://localhost:5010
-        VITE_CLIENT_ID: react-app
-        VITE_REDIRECT_URI: http://localhost:3000/callback
-        VITE_POST_LOGOUT_URI: http://localhost:3000
+        # Gateway URL (trình duyệt truy cập trực tiếp)
         VITE_GATEWAY_URL: http://localhost:5050
+        # IAM backend URL (trình duyệt redirect tới)
+        VITE_API_TOKEN_URL: ${VITE_API_TOKEN_URL:-http://localhost:5010}
+        # URL IAM redirect về sau khi SSO
+        VITE_CALLBACK_URL: ${VITE_CALLBACK_URL:-http://localhost:3000/login-callback}
+        # App ID đăng ký với IAM
+        VITE_APP_ID: ${VITE_APP_ID:-react-app}
     container_name: react-app
     restart: unless-stopped
     ports:
-      - "3000:80"
+      - "5173:80"
     depends_on:
       gateway:
         condition: service_healthy

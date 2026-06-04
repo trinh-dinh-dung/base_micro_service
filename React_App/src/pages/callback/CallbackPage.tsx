@@ -1,31 +1,17 @@
-/**
- * Page OIDC callback — không cần Redux (chỉ redirect sau khi SSO xong).
+﻿/**
+ * /callback – route cũ (OIDC). Giờ không dùng, chuyển hết về /login-callback.
+ * Giữ lại để không 404 nếu còn bookmark cũ.
  */
 import { useEffect } from 'react';
-import { useAuth } from 'react-oidc-context';
 import { useNavigate } from 'react-router-dom';
 import { LoadingScreen } from '../../shared/ui/LoadingScreen';
-import './CallbackPage.module.scss';
 
 export default function CallbackPage() {
-  const auth = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!auth.isLoading && !auth.error) {
-      navigate('/', { replace: true });
-    }
-  }, [auth.isLoading, auth.error, navigate]);
+    navigate('/login-callback', { replace: true });
+  }, [navigate]);
 
-  if (auth.error) {
-    return (
-      <LoadingScreen
-        error={auth.error.message}
-        onAction={() => navigate('/')}
-        actionLabel="Go Home"
-      />
-    );
-  }
-
-  return <LoadingScreen message="Completing sign in..." />;
+  return <LoadingScreen message="Đang chuyển hướng..." />;
 }

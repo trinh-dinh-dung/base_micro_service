@@ -11,6 +11,12 @@ namespace Application.Base
         /// <summary>OpenIddict / OIDC authority (vd. http://auth-server:8080). Nếu có → validate RS256 qua metadata.</summary>
         public string? Authority { get; set; }
 
+        /// <summary>Validate token bằng API IAM bên ngoài (theo kiểu MergingSystem), không dùng OIDC metadata.</summary>
+        public bool UseExternalValidation { get; set; }
+
+        /// <summary>API IAM để kiểm tra token hợp lệ.</summary>
+        public string? ExternalValidationUrl { get; set; }
+
         /// <summary>Issuer trong access token (vd. http://localhost:5010) — khớp URL browser đăng nhập SSO.</summary>
         public string[]? ValidIssuers { get; set; }
 

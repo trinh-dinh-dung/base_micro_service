@@ -1,8 +1,8 @@
-/** API gọi trực tiếp tại page → dispatch vào features/user slice. */
+﻿/** API gá»i trá»±c tiáº¿p táº¡i page â†’ dispatch vÃ o features/user slice. */
 import { Alert, Button, Descriptions, Space, Spin } from 'antd';
 import { UserOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'react-oidc-context';
+import { selectIsAuthenticated } from '../../../../features/auth/authSelectors';
 import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
 import {
   fetchUserFromApi,
@@ -17,8 +17,8 @@ import {
 import styles from './UserInfoSection.module.scss';
 
 export default function UserInfoSection() {
-  const auth = useAuth();
   const navigate = useNavigate();
+  const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const dispatch = useAppDispatch();
 
   const user = useAppSelector(selectUser);
@@ -27,8 +27,8 @@ export default function UserInfoSection() {
   const hasUser = useAppSelector(selectHasUser);
 
   const handleGetInfo = async () => {
-    if (!auth.isAuthenticated) {
-      auth.signinRedirect();
+    if (!isAuthenticated) {
+      navigate('/login');
       return;
     }
 
@@ -67,18 +67,18 @@ export default function UserInfoSection() {
         )}
       </div>
 
-      {!auth.isAuthenticated && (
+      {!isAuthenticated && (
         <Alert
           type="info"
           showIcon
-          message="Đăng nhập SSO trước khi gọi API User Info (Bearer token)."
+          message="ÄÄƒng nháº­p SSO trÆ°á»›c khi gá»i API User Info (Bearer token)."
           style={{ marginBottom: 12 }}
         />
       )}
 
       {status === 'loading' && (
         <div className={styles.summary}>
-          <Spin tip="Đang lấy thông tin user..." />
+          <Spin tip="Äang láº¥y thÃ´ng tin user..." />
         </div>
       )}
 
@@ -89,14 +89,14 @@ export default function UserInfoSection() {
       {hasUser && user && (
         <div className={styles.summary}>
           <Descriptions bordered size="small" column={1}>
-            <Descriptions.Item label="Họ tên">{user.fullName}</Descriptions.Item>
-            <Descriptions.Item label="Tuổi">{user.age}</Descriptions.Item>
+            <Descriptions.Item label="Há» tÃªn">{user.fullName}</Descriptions.Item>
+            <Descriptions.Item label="Tuá»•i">{user.age}</Descriptions.Item>
             <Descriptions.Item label="Phone">{user.phone}</Descriptions.Item>
-            <Descriptions.Item label="Địa chỉ">{user.address}</Descriptions.Item>
+            <Descriptions.Item label="Äá»‹a chá»‰">{user.address}</Descriptions.Item>
           </Descriptions>
           <Space style={{ marginTop: 12 }}>
             <span style={{ color: '#64748b', fontSize: 13 }}>
-              API gọi ngay trong page → dispatch(setUser) → /user đọc store.
+              API gá»i ngay trong page â†’ dispatch(setUser) â†’ /user Ä‘á»c store.
             </span>
           </Space>
         </div>
@@ -104,3 +104,5 @@ export default function UserInfoSection() {
     </section>
   );
 }
+
+

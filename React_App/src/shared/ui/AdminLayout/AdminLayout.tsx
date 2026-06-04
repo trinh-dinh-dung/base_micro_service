@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Layout, Menu, theme } from 'antd';
-import { HomeOutlined, UserOutlined, BankOutlined } from '@ant-design/icons';
+import { Layout, Menu, theme, Button } from 'antd';
+import { HomeOutlined, UserOutlined, BankOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../../app/hooks';
+import { clearAuth } from '../../../features/auth/authSlice';
 import styles from './AdminLayout.module.scss';
 
 const { Header, Sider, Content } = Layout;
@@ -26,9 +28,15 @@ const menuItems = [
 
 export default function AdminLayout() {
   const [collapsed, setCollapsed] = useState(false);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const { token } = theme.useToken();
+
+  const handleLogout = () => {
+    dispatch(clearAuth());
+    navigate('/login', { replace: true });
+  };
 
   const selectedKey = menuItems.find((item) => location.pathname.startsWith(item.key === '/' ? '/' : item.key))?.key ?? '/';
 
@@ -59,6 +67,14 @@ export default function AdminLayout() {
           style={{ background: token.colorBgContainer }}
         >
           <span className={styles.headerTitle}>Admin Panel</span>
+          <Button
+            type="text"
+            icon={<LogoutOutlined />}
+            onClick={handleLogout}
+            style={{ marginLeft: 'auto' }}
+          >
+            Đăng xuất
+          </Button>
         </Header>
 
         <Content

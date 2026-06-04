@@ -1,6 +1,7 @@
 ﻿using Application.GetMap;
 using Application.IServices;
 using Application.Request;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -15,6 +16,7 @@ namespace Api.Controllers
     /// </summary>
     [Route("api/department-service/department")]
     [ApiController]
+    [Authorize]
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService _departmentService;

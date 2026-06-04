@@ -1,11 +1,11 @@
-/**
- * Trang /user — đọc store; gọi API trực tiếp tại page khi Refresh.
+﻿/**
+ * Trang /user â€” Ä‘á»c store; gá»i API trá»±c tiáº¿p táº¡i page khi Refresh.
  */
 import { Alert, Button, Card, Descriptions, Empty, Tag } from 'antd';
 import { ArrowLeftOutlined, ReloadOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from 'react-oidc-context';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { selectIsAuthenticated } from '../../features/auth/authSelectors';
 import {
   fetchUserFromApi,
   selectHasUser,
@@ -22,9 +22,9 @@ import styles from './UserPage.module.scss';
 const PAGE_CODE = 'USER_PROFILE';
 
 export default function UserPage() {
-  const auth = useAuth();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const isAuthenticated = useAppSelector(selectIsAuthenticated);
 
   const user = useAppSelector(selectUser);
   const status = useAppSelector(selectUserStatus);
@@ -32,8 +32,8 @@ export default function UserPage() {
   const hasUser = useAppSelector(selectHasUser);
 
   const handleRefetch = async () => {
-    if (!auth.isAuthenticated) {
-      auth.signinRedirect();
+    if (!isAuthenticated) {
+      navigate('/login');
       return;
     }
 
@@ -56,7 +56,7 @@ export default function UserPage() {
           <div>
             <SyncAuditMetadataButton pageCode={PAGE_CODE} />
             <Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/')} style={{ marginLeft: 8 }}>
-              Về Home
+              Vá» Home
             </Button>
           </div>
         </div>
@@ -64,29 +64,29 @@ export default function UserPage() {
         <Alert
           type="success"
           showIcon
-          message="API gọi trực tiếp trong UserPage"
-          description="fetchUserFromApi() → dispatch(setUser) — state chia sẻ với Home."
+          message="API gá»i trá»±c tiáº¿p trong UserPage"
+          description="fetchUserFromApi() â†’ dispatch(setUser) â€” state chia sáº» vá»›i Home."
           style={{ marginBottom: 20 }}
         />
 
         {!hasUser && status !== 'loading' && (
           <Card>
-            <Empty description="Chưa có dữ liệu. Về Home và bấm Get Info User.">
+            <Empty description="ChÆ°a cÃ³ dá»¯ liá»‡u. Vá» Home vÃ  báº¥m Get Info User.">
               <Link to="/">
-                <Button type="primary">Về Home</Button>
+                <Button type="primary">Vá» Home</Button>
               </Link>
               <Button
                 style={{ marginLeft: 8 }}
                 icon={<ReloadOutlined />}
                 onClick={() => void handleRefetch()}
               >
-                Gọi API ngay
+                Gá»i API ngay
               </Button>
             </Empty>
           </Card>
         )}
 
-        {status === 'loading' && <Card loading title="Đang tải..." />}
+        {status === 'loading' && <Card loading title="Äang táº£i..." />}
 
         {status === 'failed' && error && (
           <Alert type="error" showIcon message={error} style={{ marginBottom: 16 }} />
@@ -111,10 +111,10 @@ export default function UserPage() {
           >
             <Descriptions bordered column={1}>
               <Descriptions.Item label="Username">{user.userName}</Descriptions.Item>
-              <Descriptions.Item label="Họ tên">{user.fullName}</Descriptions.Item>
-              <Descriptions.Item label="Tuổi">{user.age}</Descriptions.Item>
-              <Descriptions.Item label="Số điện thoại">{user.phone}</Descriptions.Item>
-              <Descriptions.Item label="Địa chỉ">{user.address}</Descriptions.Item>
+              <Descriptions.Item label="Há» tÃªn">{user.fullName}</Descriptions.Item>
+              <Descriptions.Item label="Tuá»•i">{user.age}</Descriptions.Item>
+              <Descriptions.Item label="Sá»‘ Ä‘iá»‡n thoáº¡i">{user.phone}</Descriptions.Item>
+              <Descriptions.Item label="Äá»‹a chá»‰">{user.address}</Descriptions.Item>
             </Descriptions>
           </Card>
         )}
@@ -122,3 +122,4 @@ export default function UserPage() {
     </div>
   );
 }
+

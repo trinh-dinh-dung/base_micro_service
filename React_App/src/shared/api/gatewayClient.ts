@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const GATEWAY_URL = import.meta.env.VITE_GATEWAY_URL ?? "http://localhost:5050";
+const ACCESS_TOKEN_KEY = "app_access_token";
 
 /** Tạo random hex string độ dài n ký tự */
 function randomHex(length: number): string {
@@ -23,10 +24,24 @@ export const gatewayClient = axios.create({
 gatewayClient.interceptors.request.use((config) => {
   const traceparent = generateTraceparent();
   config.headers["traceparent"] = traceparent;
-  // Lưu lại để dễ debug trên console
   console.debug("[Trace]", config.method?.toUpperCase(), config.url, traceparent);
   return config;
 });
+
+// Interceptor: 401 → xóa token, để UI tự xử lý hiển thị lỗi/điều hướng
+gatewayClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      if (typeof window !== "undefined") {
+        localStorage.removeItem(ACCESS_TOKEN_KEY);
+        window.dispatchEvent(new CustomEvent("app:auth:unauthorized"));
+      }
+      delete gatewayClient.defaults.headers.common["Authorization"];
+    }
+    return Promise.reject(error);
+  }
+);
 
 export function setAuthToken(token: string | null) {
   if (token) {

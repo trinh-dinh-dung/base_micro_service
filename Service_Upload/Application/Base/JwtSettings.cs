@@ -9,6 +9,8 @@ namespace Application.Base
     public class JwtSettings
     {
         public string? Authority { get; set; }
+        public bool UseExternalValidation { get; set; }
+        public string? ExternalValidationUrl { get; set; }
         public string[]? ValidIssuers { get; set; }
         public bool ValidateIssuerSigningKey { get; set; }
         public string IssuerSigningKey { get; set; }

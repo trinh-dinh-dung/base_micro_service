@@ -1,6 +1,7 @@
-/** Section chỉ thuộc Home — dùng model local pages/home/model. */
-import { useAuth } from 'react-oidc-context';
+﻿/** Section chỉ thuộc Home – dùng model local pages/home/model. */
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
+import { selectIsAuthenticated } from '../../../../features/auth/authSelectors';
 import { pingService, selectServiceHealth, SERVICE_META, type ServiceKey } from '../../model';
 import ServiceCard from './ServiceCard';
 import styles from './ServiceHealthSection.module.scss';
@@ -8,8 +9,9 @@ import styles from './ServiceHealthSection.module.scss';
 const SERVICES: ServiceKey[] = ['base', 'upload'];
 
 export default function ServiceHealthSection() {
-  const auth = useAuth();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const baseHealth = useAppSelector(selectServiceHealth('base'));
   const uploadHealth = useAppSelector(selectServiceHealth('upload'));
 
@@ -33,8 +35,8 @@ export default function ServiceHealthSection() {
               error={health.error}
               onPing={() => dispatch(pingService(key))}
               requiresAuth
-              isAuthenticated={auth.isAuthenticated}
-              onLogin={() => auth.signinRedirect()}
+              isAuthenticated={isAuthenticated}
+              onLogin={() => navigate('/login')}
             />
           );
         })}

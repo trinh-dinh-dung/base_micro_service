@@ -7,15 +7,24 @@ namespace AuthServer.Controllers;
 
 public class AccountController : Controller
 {
-    private static readonly Dictionary<string, string> _users = new()
+    private readonly IReadOnlyDictionary<string, string> _users;
+
+    public AccountController(IConfiguration configuration)
     {
-        ["admin"] = "admin123",
-        ["user"] = "user123"
-    };
+        var configuredUsers = configuration.GetSection("Auth:Users").Get<Dictionary<string, string>>();
+        _users = (configuredUsers ?? new Dictionary<string, string>())
+            .Where(x => !string.IsNullOrWhiteSpace(x.Key) && !string.IsNullOrWhiteSpace(x.Value))
+            .ToDictionary(x => x.Key.Trim(), x => x.Value, StringComparer.OrdinalIgnoreCase);
+    }
 
     [HttpGet("~/account/login")]
     public IActionResult Login(string? returnUrl = null)
     {
+        if (!string.IsNullOrWhiteSpace(returnUrl) && !Url.IsLocalUrl(returnUrl))
+        {
+            returnUrl = "/";
+        }
+
         return View(new LoginViewModel { ReturnUrl = returnUrl });
     }
 
@@ -25,7 +34,15 @@ public class AccountController : Controller
     {
         if (!ModelState.IsValid) return View(model);
 
-        if (!_users.TryGetValue(model.Username, out var password) || password != model.Password)
+        if (_users.Count == 0)
+        {
+            ModelState.AddModelError(string.Empty, "Authentication users are not configured.");
+            return View(model);
+        }
+
+        var username = model.Username.Trim();
+
+        if (!_users.TryGetValue(username, out var password) || password != model.Password)
         {
             ModelState.AddModelError(string.Empty, "Invalid username or password.");
             return View(model);
@@ -33,16 +50,20 @@ public class AccountController : Controller
 
         var claims = new List<Claim>
         {
-            new(ClaimTypes.NameIdentifier, model.Username),
-            new(ClaimTypes.Name, model.Username),
-            new(ClaimTypes.Email, $"{model.Username}@example.com"),
-            new(ClaimTypes.Role, model.Username == "admin" ? "Admin" : "User")
+            new(ClaimTypes.NameIdentifier, username),
+            new(ClaimTypes.Name, username),
+            new(ClaimTypes.Email, $"{username}@example.com"),
+            new(ClaimTypes.Role, username.Equals("admin", StringComparison.OrdinalIgnoreCase) ? "Admin" : "User")
         };
 
         var identity = new ClaimsIdentity(claims, "Cookies");
         await HttpContext.SignInAsync("Cookies", new ClaimsPrincipal(identity));
 
-        return Redirect(model.ReturnUrl ?? "/");
+        var safeReturnUrl = !string.IsNullOrWhiteSpace(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl)
+            ? model.ReturnUrl
+            : "/";
+
+        return LocalRedirect(safeReturnUrl);
     }
 
     [HttpGet("~/account/logout")]
