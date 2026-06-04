@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using System.Security.Claims;
 using System.Text.Json;
 
 namespace Gateway.Middleware;
@@ -17,6 +18,14 @@ public sealed class GatewayTokenValidationMiddleware
     public async Task InvokeAsync(HttpContext context, IHttpClientFactory httpClientFactory)
     {
         var path = context.Request.Path.Value ?? string.Empty;
+        var isTokenIssueEndpoint = path.Equals("/api/base/api/e-invoice-holding/Authen/get-token", StringComparison.OrdinalIgnoreCase);
+
+        if (isTokenIssueEndpoint)
+        {
+            await _next(context);
+            return;
+        }
+
         var requiresAuth = path.StartsWith("/api/base", StringComparison.OrdinalIgnoreCase)
             || path.StartsWith("/api/upload", StringComparison.OrdinalIgnoreCase);
 
@@ -98,6 +107,13 @@ public sealed class GatewayTokenValidationMiddleware
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             await context.Response.WriteAsJsonAsync(new { success = false, message = "Invalid IAM validation response." });
             return;
+        }
+
+        if (context.User?.Identity?.IsAuthenticated != true)
+        {
+            var identity = new ClaimsIdentity("ExternalIamValidation");
+            identity.AddClaim(new Claim(ClaimTypes.Name, "external-user"));
+            context.User = new ClaimsPrincipal(identity);
         }
 
         await _next(context);

@@ -52,7 +52,6 @@ builder.Services.AddAuthentication("Bearer")
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Authenticated", policy => policy.RequireAuthenticatedUser());
-    options.AddPolicy("Anonymous", policy => policy.RequireAssertion(_ => true));
 });
 builder.Services.AddHealthChecks();
 builder.Services.AddHttpClient();
@@ -74,8 +73,8 @@ var app = builder.Build();
 
 app.UseCors("AllowAll");
 app.UseAuthentication();
-app.UseAuthorization();
 app.UseMiddleware<GatewayTokenValidationMiddleware>();
+app.UseAuthorization();
 app.UseMiddleware<TraceparentLoggingMiddleware>();
 
 // Health check endpoint — dùng cho Docker healthcheck và load balancer

@@ -49,6 +49,7 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
+
     const signInUrl = await buildSsoSignInUrl();
     if (signInUrl) {
       window.location.replace(signInUrl);

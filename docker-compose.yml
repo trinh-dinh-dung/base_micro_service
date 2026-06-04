@@ -99,16 +99,16 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-      # JWT verify mode: internal shared-secret (không dùng OIDC)
+      # JWT verify mode: external validation API (không dùng OIDC metadata)
       - Auth__Authority=
-      - Auth__UseExternalValidation=true
-      - Auth__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://auth.pvi.com.vn/api/Authentication/ValidAccessToken}
+      - Auth__UseExternalValidation=${GATEWAY_USE_EXTERNAL_VALIDATION:-true}
+      - Auth__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://authtest.pvi.com.vn/api/Authentication/ValidAccessToken}
       - Auth__SsoTokenUrl=${VITE_API_TOKEN_URL:-https://authtest.pvi.com.vn}
       - Auth__SsoCallbackUrl=${VITE_CALLBACK_URL:-http://localhost:5173/login-callback}
       - Auth__SsoAppId=${VITE_APP_ID:-react-app}
       - Auth__SsoPrivateKey=${SSO_PRIVATE_KEY:-}
       - Auth__JwtSecret=${JWT_SECRET:-44k63553-15C1-5769-9133-EFAF45A9B705}
-      - Auth__ValidateIssuerSigningKey=true
+      - Auth__ValidateIssuerSigningKey=false
       - Auth__ValidateIssuer=false
       - Auth__ValidateAudience=false
       - Auth__RequireExpirationTime=true
@@ -159,10 +159,10 @@ services:
       - ASPNETCORE_URLS=http://+:8080
       # ── SQL Server ──────────────────────────────────────────
       - Appsettings__DefaultConnection=${SERVICE_BASE_DB:-Server=192.168.252.158,1433;Database=PIAS_AUDIT_LOGS;User Id=sa;Password=s@123456;TrustServerCertificate=True;}
-      # ── JWT OpenIddict (RS256) — Authority nội bộ Docker, iss = localhost:5010 ──
+      # ── JWT validate qua IAM API (không dùng OIDC metadata) ──
       - JsonWebTokenKeys__Authority=
-      - JsonWebTokenKeys__UseExternalValidation=true
-      - JsonWebTokenKeys__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://auth.pvi.com.vn/api/Authentication/ValidAccessToken}
+      - JsonWebTokenKeys__UseExternalValidation=${SERVICE_BASE_USE_EXTERNAL_VALIDATION:-true}
+      - JsonWebTokenKeys__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://authtest.pvi.com.vn/api/Authentication/ValidAccessToken}
       - JsonWebTokenKeys__ValidateIssuerSigningKey=false
       - JsonWebTokenKeys__ValidateIssuer=false
       - JsonWebTokenKeys__ValidateAudience=false
@@ -202,8 +202,8 @@ services:
       - ASPNETCORE_URLS=http://+:8080
       - Appsettings__DefaultConnection=${SERVICE_UPLOAD_DB:-Server=host.docker.internal;Port=5432;Database=ManageDepartment;User Id=postgres;Password=123456aA@;}
       - JsonWebTokenKeys__Authority=
-      - JsonWebTokenKeys__UseExternalValidation=true
-      - JsonWebTokenKeys__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://auth.pvi.com.vn/api/Authentication/ValidAccessToken}
+      - JsonWebTokenKeys__UseExternalValidation=${SERVICE_UPLOAD_USE_EXTERNAL_VALIDATION:-true}
+      - JsonWebTokenKeys__ExternalValidationUrl=${IAM_VALIDATE_URL:-https://authtest.pvi.com.vn/api/Authentication/ValidAccessToken}
       - JsonWebTokenKeys__ValidateIssuerSigningKey=false
       - JsonWebTokenKeys__ValidateIssuer=false
       - JsonWebTokenKeys__ValidateAudience=false

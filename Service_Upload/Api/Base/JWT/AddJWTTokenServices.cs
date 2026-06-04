@@ -29,6 +29,13 @@ namespace Api.Base.JWT
                 options.SaveToken = true;
                 options.RequireHttpsMetadata = false;
                 options.TokenValidationParameters = BuildTokenValidationParameters(jwtSettings);
+                // .NET 8+ defaults to JsonWebTokenHandler which ignores SignatureValidator.
+                // When external validation bypasses signature checking, force the legacy
+                // JwtSecurityTokenHandler so our custom SignatureValidator is honoured.
+                if (jwtSettings.UseExternalValidation && !jwtSettings.ValidateIssuerSigningKey)
+                {
+                    options.UseSecurityTokenValidators = true;
+                }
                 ConfigureAuthority(options, jwtSettings);
                 options.Events = BuildJwtEvents(jwtSettings);
             });
@@ -38,7 +45,7 @@ namespace Api.Base.JWT
         {
             var tokenValidationParameters = new TokenValidationParameters
             {
-                ValidateIssuerSigningKey = true,
+                ValidateIssuerSigningKey = settings.ValidateIssuerSigningKey,
                 ValidateIssuer = settings.ValidateIssuer,
                 ValidateAudience = settings.ValidateAudience,
                 RequireExpirationTime = settings.RequireExpirationTime,
@@ -62,6 +69,14 @@ namespace Api.Base.JWT
 
             if (!string.IsNullOrWhiteSpace(settings.Authority))
             {
+                return tokenValidationParameters;
+            }
+
+            // External validation mode: skip signature check entirely — IAM API validates the token.
+            if (!settings.ValidateIssuerSigningKey)
+            {
+                tokenValidationParameters.SignatureValidator =
+                    (token, _) => new System.IdentityModel.Tokens.Jwt.JwtSecurityToken(token);
                 return tokenValidationParameters;
             }
 
