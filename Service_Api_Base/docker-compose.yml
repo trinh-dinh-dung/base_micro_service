@@ -10,7 +10,7 @@
       ASPNETCORE_ENVIRONMENT: dev
       ASPNETCORE_URLS: http://+:8080
 
-      Appsettings__DefaultConnection: "Server=103.166.185.39; Port=5432; Database=ManageDepartment; User Id=postgres; Password=123456aA@;"
+      Appsettings__DefaultConnection: "Server=192.168.252.158,1433;Database=PIAS_AUDIT_LOGS;User Id=sa;Password=s@123456;TrustServerCertificate=True;"
       Appsettings__ConfigurationConnectString: ""
       Appsettings__Api_Gateway: http://192.168.2.103:3028
       Appsettings__Api_Authority: http://172.31.2.120:8080

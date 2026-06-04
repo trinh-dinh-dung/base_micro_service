@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from '../features/auth';
 import { userReducer } from '../features/user';
+import { departmentReducer } from '../features/department';
 import { homeServiceHealthReducer } from '../pages/home/model';
 
 export const store = configureStore({
@@ -9,6 +10,8 @@ export const store = configureStore({
     auth: authReducer,
     /** Domain ngang — User (Home + /user) */
     user: userReducer,
+    /** Phòng ban CRUD */
+    department: departmentReducer,
     /** Chỉ Home — ping microservices */
     homeServiceHealth: homeServiceHealthReducer,
   },

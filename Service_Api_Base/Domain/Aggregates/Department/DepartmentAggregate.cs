@@ -28,7 +28,7 @@ namespace Domain.Aggregates.Department
                 Note = note,
                 IsDelete = false,
                 IsActive = true,
-                CreateDate = DateTime.UtcNow,
+                CreateDate = DateOnly.FromDateTime(DateTime.UtcNow),
             };
 
             return new DepartmentAggregate(entity);
@@ -49,15 +49,15 @@ namespace Domain.Aggregates.Department
             Root.DepartmentName = name.Trim();
             Root.ParentId = parentId;
             Root.Note = note;
-            Root.IsActive = isActive;
-            Root.IsDelete = isDelete;
-            Root.UpdateDate = DateTime.UtcNow;
+            Root.IsActive = isActive ?? Root.IsActive;
+            Root.IsDelete = isDelete ?? Root.IsDelete;
+            Root.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
         }
 
         public void SoftDelete()
         {
             Root.IsDelete = true;
-            Root.UpdateDate = DateTime.UtcNow;
+            Root.UpdateDate = DateOnly.FromDateTime(DateTime.UtcNow);
         }
 
         private static void ValidateName(string name)

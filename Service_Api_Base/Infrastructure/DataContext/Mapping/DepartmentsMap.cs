@@ -11,7 +11,7 @@ namespace Infrastructure.DataContext.Mapping
         {
             #region Generated Configure
             // table
-            builder.ToTable("Departments", "public");
+            builder.ToTable("Departments", "dbo");
 
             // key
             builder.HasKey(t => t.DepartmentId);
@@ -20,29 +20,31 @@ namespace Infrastructure.DataContext.Mapping
             builder.Property(t => t.DepartmentId)
                 .IsRequired()
                 .HasColumnName("DepartmentId")
-                .HasColumnType("uuid");
+                .HasColumnType("uniqueidentifier")
+                .HasDefaultValueSql("(newid())");
 
             builder.Property(t => t.DepartmentName)
                 .IsRequired()
                 .HasColumnName("DepartmentName")
-                .HasColumnType("character varying(255)")
+                .HasColumnType("nvarchar(255)")
                 .HasMaxLength(255);
 
             builder.Property(t => t.DepartmentCode)
                 .IsRequired()
                 .HasColumnName("DepartmentCode")
-                .HasColumnType("character varying(50)")
+                .HasColumnType("nvarchar(50)")
                 .HasMaxLength(50);
 
             builder.Property(t => t.Note)
                 .HasColumnName("Note")
-                .HasColumnType("character varying(1000)")
+                .HasColumnType("nvarchar(1000)")
                 .HasMaxLength(1000);
 
             builder.Property(t => t.IsActive)
+                .IsRequired()
                 .HasColumnName("IsActive")
-                .HasColumnType("boolean")
-                .HasDefaultValueSql("true");
+                .HasColumnType("bit")
+                .HasDefaultValue(true);
 
             builder.Property(t => t.CreateDate)
                 .HasColumnName("CreateDate")
@@ -54,33 +56,34 @@ namespace Infrastructure.DataContext.Mapping
 
             builder.Property(t => t.CreateBy)
                 .HasColumnName("CreateBy")
-                .HasColumnType("uuid");
+                .HasColumnType("uniqueidentifier");
 
             builder.Property(t => t.UpdateBy)
                 .HasColumnName("UpdateBy")
-                .HasColumnType("uuid");
+                .HasColumnType("uniqueidentifier");
 
             builder.Property(t => t.IsDelete)
+                .IsRequired()
                 .HasColumnName("IsDelete")
-                .HasColumnType("boolean")
-                .HasDefaultValueSql("false");
+                .HasColumnType("bit")
+                .HasDefaultValue(false);
 
             builder.Property(t => t.ParentId)
                 .HasColumnName("ParentId")
-                .HasColumnType("uuid");
+                .HasColumnType("uniqueidentifier");
 
             // relationships
             #endregion
         }
 
         #region Generated Constants
-        public struct Table
+        public readonly struct Table
         {
-            public const string Schema = "public";
+            public const string Schema = "dbo";
             public const string Name = "Departments";
         }
 
-        public struct Columns
+        public readonly struct Columns
         {
             public const string DepartmentId = "DepartmentId";
             public const string DepartmentName = "DepartmentName";

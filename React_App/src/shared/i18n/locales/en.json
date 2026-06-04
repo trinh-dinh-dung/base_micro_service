@@ -1,0 +1,26 @@
+{
+  "auditMetadata": {
+    "DEPARTMENT_MANAGEMENT": {
+      "departmentCode": "Department Code",
+      "departmentName": "Department Name",
+      "parentId": "Parent Department",
+      "note": "Note",
+      "isActive": "Active",
+      "isDelete": "Soft Deleted"
+    },
+    "USER_PROFILE": {
+      "userName": "Username",
+      "fullName": "Full Name",
+      "age": "Age",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "HOME_DASHBOARD": {
+      "userName": "Username",
+      "fullName": "Full Name",
+      "age": "Age",
+      "phone": "Phone",
+      "address": "Address"
+    }
+  }
+}

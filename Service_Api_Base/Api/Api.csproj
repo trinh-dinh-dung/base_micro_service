@@ -3,7 +3,8 @@
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<NoWarn>1591</NoWarn>
+		<!-- 1591=missing XML doc, 8632=nullable annotation outside context, NU1902/NU1903=vuln packages with no available fix -->
+		<NoWarn>1591;8632;NU1902;NU1903</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -18,15 +19,20 @@
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.8" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.8" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.1" />
-		<PackageReference Include="Refit.HttpClientFactory" Version="10.1.6" />
+
+		<PackageReference Include="Refit.HttpClientFactory" Version="10.0.1" />
 		<PackageReference Include="RestSharp" Version="106.12.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
 		<PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
 		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
 		<PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
 		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="10.0.0" />
+		<PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.29.0" />
+		<PackageReference Include="Elastic.Apm.SerilogEnricher" Version="8.6.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+		<!-- Override vulnerable transitive dependencies -->
+		<PackageReference Include="SharpCompress" Version="0.38.0" />
+		<PackageReference Include="Snappier" Version="1.1.6" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -105,6 +105,12 @@ services:
       - ReverseProxy__Clusters__service-base__Destinations__primary__Address=http://service-base:8080
       - ReverseProxy__Clusters__service-upload__Destinations__primary__Address=http://service-upload:8080
       - ReverseProxy__Clusters__auth-server__Destinations__primary__Address=http://auth-server:8080
+      # ── Elastic APM ─────────────────────────────────────────
+      - ElasticApm__ServerUrl=${APM_SERVER_URL:-http://host.docker.internal:8200}
+      - ElasticApm__ServiceName=gateway
+      - ElasticApm__Environment=Production
+      - ElasticApm__LogLevel=Error
+      - ElasticApm__CentralConfig=false
     depends_on:
       auth-server:
         condition: service_healthy
@@ -126,7 +132,7 @@ services:
   # ─────────────────────────────────────────────────────────
   service-base:
     build:
-      context: ./Service_Base
+      context: ./Service_Api_Base
       dockerfile: Dockerfile
     container_name: service-base
     restart: unless-stopped
@@ -135,8 +141,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-      # ── PostgreSQL ──────────────────────────────────────────
-      - Appsettings__DefaultConnection=${SERVICE_BASE_DB:-Server=host.docker.internal;Port=5432;Database=ManageDepartment;User Id=postgres;Password=123456aA@;}
+      # ── SQL Server ──────────────────────────────────────────
+      - Appsettings__DefaultConnection=${SERVICE_BASE_DB:-Server=192.168.252.158,1433;Database=PIAS_AUDIT_LOGS;User Id=sa;Password=s@123456;TrustServerCertificate=True;}
       # ── JWT OpenIddict (RS256) — Authority nội bộ Docker, iss = localhost:5010 ──
       - JsonWebTokenKeys__Authority=http://auth-server:8080
       - JsonWebTokenKeys__ValidIssuers__0=http://localhost:5010
@@ -149,7 +155,13 @@ services:
       - ServiceAddresses__ServiceUpload=http://service-upload:8080
       # ── Misc ────────────────────────────────────────────────
       - Appsettings__isCheckPermission=false
-      - ElasticConfiguration__Uri=${ELASTIC_URI:-http://localhost:9200}
+      - ElasticConfiguration__Uri=${ELASTIC_URI:-http://host.docker.internal:9200}
+      # ── Elastic APM ─────────────────────────────────────────
+      - ElasticApm__ServerUrl=${APM_SERVER_URL:-http://host.docker.internal:8200}
+      - ElasticApm__ServiceName=service-api-base
+      - ElasticApm__Environment=Production
+      - ElasticApm__LogLevel=Error
+      - ElasticApm__CentralConfig=false
     networks: [microservice-network]
 
   # ─────────────────────────────────────────────────────────

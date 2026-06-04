@@ -1,9 +1,7 @@
 using Application.Abstractions.Persistence;
 using Application.Common.Appsetting;
 using Application.IServices.DataConfig;
-using Domain.Entities;
 using Dapper;
-using Infrastructure.Persistence;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using StackExchange.Redis;
@@ -19,13 +17,13 @@ namespace Infrastructure.Services
         private readonly IDatabase _redisDb;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IHostEnvironment _hostingEnvironment;
-        private readonly DapperConnectionFactory _connectionFactory;
+        private readonly IDbConnectionFactory _connectionFactory;
 
         public DataConfigService(
             IUnitOfWork unitOfWork,
             IHostEnvironment hostingEnvironment,
             IOptions<Appsettings> appsettings,
-            DapperConnectionFactory connectionFactory)
+            IDbConnectionFactory connectionFactory)
         {
             _unitOfWork = unitOfWork;
             _hostingEnvironment = hostingEnvironment;
@@ -71,25 +69,10 @@ namespace Infrastructure.Services
             return connectString;
         }
 
-        public async Task<string> GetUserIDByUserName(string userName)
+        public Task<string> GetUserIDByUserName(string userName)
         {
-            var cacheKey = _hostingEnvironment.EnvironmentName + "_mes_UserID_" + userName;
-            var userId = string.Empty;
-            if (_redisDb != null)
-                userId = _redisDb.StringGet(cacheKey);
-
-            if (!string.IsNullOrEmpty(userId))
-                return userId;
-
-            var userInfo = await _unitOfWork.Repository<Users>().FirstOrDefault(
-                filter: m => m.UserName == userName && m.IsDelete != true);
-
-            if (userInfo == null || userInfo.UserId == Guid.Empty)
-                return string.Empty;
-
-            userId = userInfo.UserId.ToString();
-            _redisDb?.StringSet(cacheKey, userId, TimeSpan.FromMinutes(15));
-            return userId;
+            // Entity Users không còn trong schema hiện tại
+            return Task.FromResult(string.Empty);
         }
     }
 }

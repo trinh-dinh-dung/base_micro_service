@@ -8,27 +8,28 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        internal readonly SopContext _context;
+        internal readonly PVIContext _context;
         internal readonly DbSet<TEntity> _dbSet;
 
-        public GenericRepository(SopContext context)
+        public GenericRepository(PVIContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();
         }
 
-        public virtual async Task<int> Count(Expression<Func<TEntity, bool>> filter = null)
+        public virtual async Task<int> Count(Expression<Func<TEntity, bool>> filter = null, CancellationToken cancellationToken = default)
         {
             IQueryable<TEntity> query = _dbSet.AsNoTracking();
             if (filter != null)
                 query = query.Where(filter);
-            return await query.CountAsync();
+            return await query.CountAsync(cancellationToken);
         }
 
         public virtual IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
@@ -83,7 +84,7 @@ namespace Infrastructure.Repositories
         public virtual async Task<TEntity> FirstOrDefault(Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null,
-            bool enableTracking = true, bool asSplitQuery = false)
+            bool enableTracking = true, bool asSplitQuery = false, CancellationToken cancellationToken = default)
         {
             IQueryable<TEntity> query = _dbSet;
             if (!enableTracking) query = query.AsNoTracking();
@@ -98,16 +99,16 @@ namespace Infrastructure.Repositories
 
             if (asSplitQuery)
                 query = query.AsSplitQuery();
-            return await query.FirstOrDefaultAsync();
+            return await query.FirstOrDefaultAsync(cancellationToken);
         }
 
-        public virtual async Task Insert(TEntity entity) => await _dbSet.AddAsync(entity);
+        public virtual async Task Insert(TEntity entity, CancellationToken cancellationToken = default) => await _dbSet.AddAsync(entity, cancellationToken);
 
-        public virtual async Task InsertRange(IEnumerable<TEntity> entities) => await _dbSet.AddRangeAsync(entities);
+        public virtual async Task InsertRange(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default) => await _dbSet.AddRangeAsync(entities, cancellationToken);
 
-        public virtual async Task Delete(object id)
+        public virtual async Task Delete(object id, CancellationToken cancellationToken = default)
         {
-            var entityToDelete = await _dbSet.FindAsync(id);
+            var entityToDelete = await _dbSet.FindAsync(new[] { id }, cancellationToken);
             Delete(entityToDelete);
         }
 
@@ -158,29 +159,29 @@ namespace Infrastructure.Repositories
             return _dbSet.FromSqlRaw(sqlQuery, parameters);
         }
 
-        public async Task<List<T>> RawSqlQuery<T>(string query, Func<DbDataReader, T> map, object[] parameter = null)
+        public async Task<List<T>> RawSqlQuery<T>(string query, Func<DbDataReader, T> map, object[] parameter = null, CancellationToken cancellationToken = default)
         {
             await using var command = _context.Database.GetDbConnection().CreateCommand();
             if (parameter != null)
                 command.Parameters.AddRange(parameter);
             command.CommandText = query;
             command.CommandType = CommandType.Text;
-            await _context.Database.OpenConnectionAsync();
-            await using var result = await command.ExecuteReaderAsync();
+            await _context.Database.OpenConnectionAsync(cancellationToken);
+            await using var result = await command.ExecuteReaderAsync(cancellationToken);
             var entities = new List<T>();
-            while (await result.ReadAsync())
+            while (await result.ReadAsync(cancellationToken))
                 entities.Add(map(result));
             return entities;
         }
 
-        public virtual async Task<int> ExecuteSqlRawAsync(string sqlQuery, object[] parameters = null)
+        public virtual async Task<int> ExecuteSqlRawAsync(string sqlQuery, object[] parameters = null, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(sqlQuery))
                 return 0;
 
             if (parameters == null)
-                return await _context.Database.ExecuteSqlRawAsync(sqlQuery);
-            return await _context.Database.ExecuteSqlRawAsync(sqlQuery, parameters);
+                return await _context.Database.ExecuteSqlRawAsync(sqlQuery, cancellationToken);
+            return await _context.Database.ExecuteSqlRawAsync(sqlQuery, parameters, cancellationToken);
         }
     }
 }

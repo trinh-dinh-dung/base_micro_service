@@ -1,0 +1,56 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.levelTag {
+  font-size: 11px;
+}
+
+.auditDrawer {
+  :global(.ant-drawer-header) {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 14px 20px;
+  }
+
+  :global(.ant-drawer-body) {
+    padding: 16px 20px;
+    background: #fafcff;
+  }
+}
+
+.auditTable {
+  :global(.ant-table-thead > tr > th) {
+    background: #f4f7fb;
+  }
+}
+
+.changeCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.oldValue {
+  color: #8c8c8c;
+  max-width: 260px;
+}
+
+.newValue {
+  color: #1f1f1f;
+  max-width: 260px;
+}
+
+.changeArrow {
+  color: #1677ff;
+  font-weight: 600;
+}

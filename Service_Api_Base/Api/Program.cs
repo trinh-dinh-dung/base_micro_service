@@ -5,6 +5,7 @@ using Serilog.Sinks.Elasticsearch;
 using Serilog;
 using System;
 using System.Reflection;
+using Elastic.Apm.SerilogEnricher;
 
 namespace Evo.Mes.Template.Api
 {
@@ -21,7 +22,7 @@ namespace Evo.Mes.Template.Api
              .ConfigureAppConfiguration((HostBuilderContext hostBuilderContext, IConfigurationBuilder config) =>
              {
                  var env = hostBuilderContext.HostingEnvironment;
-                 config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true);
+                 config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
                  config.AddEnvironmentVariables();
              })
             .ConfigureWebHostDefaults(webBuilder =>
@@ -37,13 +38,17 @@ namespace Evo.Mes.Template.Api
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile(
                     $"appsettings.{environment}.json",
-                    optional: false)
+                    optional: true)
                 .AddEnvironmentVariables()
                 .Build();
 
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .Enrich.WithMachineName()
+                .Enrich.WithElasticApmCorrelationInfo()
+                .Filter.ByExcluding(e =>
+                    e.MessageTemplate.Text.Contains("event from elasticsearch") ||
+                    e.MessageTemplate.Text.Contains("DiagnosticsListener"))
                 .WriteTo.Debug()
                 .WriteTo.Console()
                 .WriteTo.Elasticsearch(ConfigureElasticSink(configuration, environment))

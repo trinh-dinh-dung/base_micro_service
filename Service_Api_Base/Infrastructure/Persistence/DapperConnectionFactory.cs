@@ -1,7 +1,7 @@
 using Application.Abstractions.Persistence;
 using Application.Common.Appsetting;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
-using Npgsql;
 using System.Data;
 
 namespace Infrastructure.Persistence
@@ -17,6 +17,6 @@ namespace Infrastructure.Persistence
 
         public string ConnectionString => _settings.Value.ConfigurationConnectString;
 
-        public IDbConnection CreateConnection() => new NpgsqlConnection(ConnectionString);
+        public IDbConnection CreateConnection() => new SqlConnection(ConnectionString);
     }
 }

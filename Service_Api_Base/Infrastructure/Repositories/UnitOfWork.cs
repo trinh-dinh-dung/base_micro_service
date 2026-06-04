@@ -3,6 +3,7 @@ using Infrastructure.DataContext;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
@@ -10,22 +11,22 @@ namespace Infrastructure.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private Dictionary<(Type type, string name), object> _repositories;
-        private readonly SopContext _context;
+        private readonly PVIContext _context;
         private bool _disposed;
 
-        public UnitOfWork(SopContext context)
+        public UnitOfWork(PVIContext context)
         {
             _context = context;
         }
 
-        public async Task<bool> Commit()
+        public async Task<bool> Commit(CancellationToken cancellationToken = default)
         {
             var retryCount = 3;
             while (retryCount > 0)
             {
                 try
                 {
-                    await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync(cancellationToken);
                     return true;
                 }
                 catch (DbUpdateConcurrencyException)

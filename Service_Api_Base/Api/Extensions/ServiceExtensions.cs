@@ -15,8 +15,6 @@ namespace Api.Extensions
         {
             services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<IDepartmentDapperService, DepartmentDapperService>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IPositionService, PositionService>();
             services.AddScoped<IHomeService, HomeService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

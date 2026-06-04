@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Service_Api_Base/">
+    <Project Path="../Service_Api_Base/Api/Api.csproj" />
+    <Project Path="../Service_Api_Base/Application/Application.csproj" />
+    <Project Path="../Service_Api_Base/Domain/Domain.csproj" />
+    <Project Path="../Service_Api_Base/Infrastructure/Infrastructure.csproj" />
+  </Folder>
+  <Project Path="../AuthServer/AuthServer.csproj" />
+  <Project Path="../Gateway/Gateway.csproj" />
+</Solution>
