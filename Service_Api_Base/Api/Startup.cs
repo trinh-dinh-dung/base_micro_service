@@ -28,6 +28,7 @@ using System.Reflection;
 using System.IO;
 using Microsoft.AspNetCore.ResponseCompression;
 using Api.Base.JWT;
+using Api.Base.Audit;
 using Elastic.Apm.NetCoreAll;
 using Serilog;
 
@@ -76,9 +77,13 @@ namespace Evo.Mes.Template.Api
 
             // ── Elastic APM ──
             services.AddAllElasticApm();
+            services.AddScoped<AuditInterceptor>();
 
-            services.AddDbContext<SopContext>((serviceProvider, dbContextBuilder) =>
+            services.AddDbContext<PVIContext>((serviceProvider, dbContextBuilder) =>
             {
+                var auditInterceptor = serviceProvider.GetRequiredService<AuditInterceptor>();
+                dbContextBuilder.AddInterceptors(auditInterceptor);
+
                 if (Environment.EnvironmentName == "Production_Custom")
                 {
                     var httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
@@ -99,13 +104,15 @@ namespace Evo.Mes.Template.Api
                     {
                         var db_connect = GetDbByTenant(serviceProvider, TenantName);
                         if (!string.IsNullOrEmpty(db_connect))
-                            dbContextBuilder.UseNpgsql(db_connect);
+                        {
+                            dbContextBuilder.UseSqlServer(db_connect);
+                        }
                     }
                 }
                 else
                 {
 
-                    dbContextBuilder.UseNpgsql(configSettings.DefaultConnection
+                    dbContextBuilder.UseSqlServer(configSettings.DefaultConnection
                    //, o => o.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery)
                    );
                 }
@@ -171,7 +178,7 @@ namespace Evo.Mes.Template.Api
                     .AddSupportedCultures(supportedCultures)
                     .AddSupportedUICultures(supportedCultures);
             });
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.LegacyRowVersionNullBehavior", false);
         }
         private IActionResult Ok(ResponseApi responseApi)
         {

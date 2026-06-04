@@ -141,8 +141,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-      # ── PostgreSQL ──────────────────────────────────────────
-      - Appsettings__DefaultConnection=${SERVICE_BASE_DB:-Server=host.docker.internal;Port=5432;Database=managedepartment;User Id=postgres;Password=postgres;}
+      # ── SQL Server ──────────────────────────────────────────
+      - Appsettings__DefaultConnection=${SERVICE_BASE_DB:-Server=192.168.252.158,1433;Database=PIAS_AUDIT_LOGS;User Id=sa;Password=s@123456;TrustServerCertificate=True;}
       # ── JWT OpenIddict (RS256) — Authority nội bộ Docker, iss = localhost:5010 ──
       - JsonWebTokenKeys__Authority=http://auth-server:8080
       - JsonWebTokenKeys__ValidIssuers__0=http://localhost:5010

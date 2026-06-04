@@ -1,27 +1,20 @@
 project:
   namespace: "{Database.Name}"
   directory: .\
+  nullable: true
+  fileScopedNamespace: false
 database:
-  provider: PostgreSQL
-  connectionString: Server=172.31.2.121; Port=5432; Database=ManageDepartment; User Id=postgres; Password=Evotek@1234
-  tableNaming: Singular
-  tables: []
-  schemas: [public, warehouse, report]
-  exclude: []
+  connectionString: Server=192.168.252.158,1433;Database=PIAS_AUDIT_LOGS;User Id=sa;Password=s@123456;TrustServerCertificate=True;
 data:
   context:
-    name: SopContext
+    name: PVIContext
     baseClass: DbContext
-    propertyNaming: Plural
     namespace: Infrastructure.DataContext
     directory: ..\Infrastructure\DataContext
     document: false
   entity:
-    entityNaming: Singular
-    relationshipNaming: Plural
-    prefixWithSchemaName: false
     namespace: Domain.Entities
-    directory: ..\Domain\Entities\{Table.Schema}
+    directory: ..\Domain\Entities\public
     document: false
   mapping:
     namespace: Infrastructure.DataContext.Mapping

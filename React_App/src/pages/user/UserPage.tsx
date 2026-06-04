@@ -16,7 +16,10 @@ import {
   setLoading,
   setUser,
 } from '../../features/user';
+import { SyncAuditMetadataButton } from '../../shared/ui/SyncAuditMetadataButton';
 import styles from './UserPage.module.scss';
+
+const PAGE_CODE = 'USER_PROFILE';
 
 export default function UserPage() {
   const auth = useAuth();
@@ -50,9 +53,12 @@ export default function UserPage() {
       <main className={styles.main}>
         <div className={styles.headerRow}>
           <h1 className={styles.title}>User Profile</h1>
-          <Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/')}>
-            Về Home
-          </Button>
+          <div>
+            <SyncAuditMetadataButton pageCode={PAGE_CODE} />
+            <Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/')} style={{ marginLeft: 8 }}>
+              Về Home
+            </Button>
+          </div>
         </div>
 
         <Alert

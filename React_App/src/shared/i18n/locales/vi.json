@@ -1,0 +1,26 @@
+{
+  "auditMetadata": {
+    "DEPARTMENT_MANAGEMENT": {
+      "departmentCode": "Ma phong ban",
+      "departmentName": "Ten phong ban",
+      "parentId": "Phong ban cha",
+      "note": "Ghi chu",
+      "isActive": "Kich hoat",
+      "isDelete": "Xoa mem"
+    },
+    "USER_PROFILE": {
+      "userName": "Ten dang nhap",
+      "fullName": "Ho ten",
+      "age": "Tuoi",
+      "phone": "So dien thoai",
+      "address": "Dia chi"
+    },
+    "HOME_DASHBOARD": {
+      "userName": "Ten dang nhap",
+      "fullName": "Ho ten",
+      "age": "Tuoi",
+      "phone": "So dien thoai",
+      "address": "Dia chi"
+    }
+  }
+}

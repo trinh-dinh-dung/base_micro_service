@@ -9,7 +9,10 @@ import HomeHeader from './components/HomeHeader/HomeHeader';
 import TokenSection from './components/TokenSection/TokenSection';
 import ServiceHealthSection from './sections/ServiceHealthSection/ServiceHealthSection';
 import UserInfoSection from './sections/UserInfoSection/UserInfoSection';
+import { SyncAuditMetadataButton } from '../../shared/ui/SyncAuditMetadataButton';
 import styles from './HomePage.module.scss';
+
+const PAGE_CODE = 'HOME_DASHBOARD';
 
 export default function HomePage() {
   const auth = useAuth();
@@ -40,6 +43,9 @@ export default function HomePage() {
       />
 
       <main className={styles.main}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 12 }}>
+          <SyncAuditMetadataButton pageCode={PAGE_CODE} />
+        </div>
         <HeroSection isAuthenticated={auth.isAuthenticated} userName={displayName} />
         <ArchitectureSection />
         <UserInfoSection />

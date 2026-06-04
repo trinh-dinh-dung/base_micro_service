@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Layout, Menu, theme } from 'antd';
-import { HomeOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined, UserOutlined, BankOutlined } from '@ant-design/icons';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import styles from './AdminLayout.module.scss';
 
@@ -17,6 +17,11 @@ const menuItems = [
     icon: <UserOutlined />,
     label: 'User',
   },
+  {
+    key: '/department',
+    icon: <BankOutlined />,
+    label: 'Phòng ban',
+  },
 ];
 
 export default function AdminLayout() {
@@ -25,7 +30,7 @@ export default function AdminLayout() {
   const location = useLocation();
   const { token } = theme.useToken();
 
-  const selectedKey = menuItems.find((item) => item.key === location.pathname)?.key ?? '/';
+  const selectedKey = menuItems.find((item) => location.pathname.startsWith(item.key === '/' ? '/' : item.key))?.key ?? '/';
 
   return (
     <Layout className={styles.layout}>

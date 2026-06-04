@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using DocumentFormat.OpenXml.Drawing.Charts;
 using Application.Common.Appsetting;
 using Application.Exceptions;
 using Application.GetMap;
@@ -11,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Npgsql;
 using RestSharp;
 using StackExchange.Redis;
 using System;

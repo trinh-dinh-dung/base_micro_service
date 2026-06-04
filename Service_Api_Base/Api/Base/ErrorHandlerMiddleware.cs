@@ -22,18 +22,17 @@ namespace Api.Base
 {
     public class ErrorHandlerMiddleware
     {
-        public readonly IRabbitMQClient _rabbitMQClient;
         private readonly RequestDelegate _next;
-        private readonly IOptions<Appsettings> _appsettings;
         private readonly IWebHostEnvironment _env;
 
         private readonly ILogger<ErrorHandlerMiddleware> _logger;
 
-        public ErrorHandlerMiddleware(RequestDelegate next, IRabbitMQClient rabbitMQClient, IOptions<Appsettings> appsettings, IWebHostEnvironment env, ILogger<ErrorHandlerMiddleware> logger)
+        public ErrorHandlerMiddleware(
+            RequestDelegate next,
+            IWebHostEnvironment env,
+            ILogger<ErrorHandlerMiddleware> logger)
         {
             _next = next;
-            _rabbitMQClient = rabbitMQClient;
-            _appsettings = appsettings;
             _env = env;
             _logger = logger;
         }
